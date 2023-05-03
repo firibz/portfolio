@@ -27,6 +27,9 @@
 <!--      src="~assets/quasar-logo-vertical.svg"-->
 <!--      style="width: 200px; height: 200px"-->
 <!--    >-->
+    <div class="text-h1 text-bold">
+      Coming Soon
+    </div>
   </q-page>
 </template>
 

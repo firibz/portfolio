@@ -20,20 +20,15 @@ export function useLanguage() {
     locale.value = value;
     //also handling quasar language pack
     try {
-      console.log("quasar try")
       langList[`../../node_modules/quasar/lang/${value}.mjs`]().then(
         (lang) => {
           $q.lang.set(lang.default);
         }
       );
     } catch (err) {
-
-      console.log("quasar error")
-      console.log(err)
       // Requested Quasar Language Pack does not exist,
       // let's not break the app, so catching error
     } finally {
-      console.log("quasar finally")
       localStorage.setItem("lang", JSON.stringify(value));
       utilStore.language = value;
     }

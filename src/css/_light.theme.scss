@@ -61,6 +61,27 @@
     z-index: 3;
   }
 
+  .team-btn:hover {
+    -webkit-box-shadow: -1px 1px 1px 0px var(--q-color-system-green-in-light);
+    -moz-box-shadow: -1px 1px 1px 0px var(--q-color-system-green-in-light);
+    box-shadow: -1px 1px 1px 0px var(--q-color-system-green-in-light);
+    color: var(--q-color-system-green-in-light) !important;
+  }
+  .download-btn:hover{
+    color: var(--q-color-system-green-in-light) !important;
+  }
+
+  hr.green-hr {
+    border: 0;
+    height: 2px;
+    background-image: linear-gradient(to right, rgba(76,119,83, 0), rgba(76,119,83, 0.75), rgba(76,119,83, 0));
+  }
+  hr.section-hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(50,50,50, 0), rgba(50,50,50, 0.75), rgba(50,50,50, 0));
+  }
+
   .dynamic-background {
     background: var(--q-color-page-bg-in-light);
     background: -webkit-linear-gradient(top left, var(--q-color-page-bg-in-light) 0%, var(--q-color-page-bg-in-light-secondary) 100%);

@@ -50,12 +50,7 @@ html[dir="ltr"] body {
   background: var(--q-color-section-bg-in-light);
 }
 /* Handle */
-.body--dark ::-webkit-scrollbar-thumb {
-  background: var(--q-color-system-green-in-light);
-  border-radius: 8px;
-}
-/* Handle */
-.body--light ::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
   background: var(--q-color-system-green-in-light);
   border-radius: 8px;
 }

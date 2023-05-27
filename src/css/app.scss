@@ -36,6 +36,30 @@ html[dir="ltr"] body {
   -webkit-text-size-adjust: 100%;
 }
 
+/* width */
+::-webkit-scrollbar {
+  width: 11px;
+  height: 11px;
+}
+/* Track */
+.body--dark ::-webkit-scrollbar-track {
+  background: var(--q-color-section-bg-in-dark);
+}
+/* Track */
+.body--light ::-webkit-scrollbar-track {
+  background: var(--q-color-section-bg-in-light);
+}
+/* Handle */
+.body--dark ::-webkit-scrollbar-thumb {
+  background: var(--q-color-system-green-in-light);
+  border-radius: 8px;
+}
+/* Handle */
+.body--light ::-webkit-scrollbar-thumb {
+  background: var(--q-color-system-green-in-light);
+  border-radius: 8px;
+}
+
 .image-cover-top{
   object-fit: cover;
   object-position: 50% 5% !important;

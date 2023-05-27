@@ -2,6 +2,6 @@
 // so you can safely delete all default props below
 
 export default {
-  about: 'About',
-  works: 'Works',
+  about: 'درباره‌ی من',
+  works: 'نمونه کارها',
 }

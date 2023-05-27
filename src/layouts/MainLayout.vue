@@ -8,23 +8,45 @@
               <div :class="$q.screen.lt.md ? '' : 'q-pr-sm'"
                    class="column full-height col-xs-11 col-md-1 items-end">
                 <div
-                  :class="$q.screen.lt.md ? 'full-width row justify-center card custom-rounded-borders-bottom' : 'column items-center card custom-rounded-borders'"
+                  :class="$q.screen.lt.md ? 'full-width row justify-center items-center card custom-rounded-borders-bottom' : 'column items-center card menu-borders'"
                   style="display: flex">
-                  <q-list padding>
+                  <q-btn-toggle
+                    v-model="utilState.language"
+                    :class="$q.screen.lt.md ? 'q-mr-xs': 'q-mb-sm'"
+                    :flat="$q.dark.isActive"
+                    :options="[
+                      { label: 'En', value: 'en-US' },
+                      { label: 'Fa', value: 'fa-IR' },
+                    ]"
+                    class="text-bold"
+                    color="section"
+                    dense
+                    glossy
+                    no-caps
+                    padding="4px 12px"
+                    rounded
+                    style="height: 32px;"
+                    text-color="system-text"
+                    toggle-color="green-11"
+                    toggle-text-color="system-green"
+                    @update:model-value="changeLanguage"
+                  />
+                  <q-list :class="$q.screen.lt.md ? '': 'full-width'">
                     <menu-item
                       v-for="item in menuList"
                       :key="item.title"
-                      :title="item.title"
                       :icon="item.icon"
                       :link="item.link"
+                      :title="item.title"
                     />
                   </q-list>
                   <q-toggle
                     v-model="utilState.appTheme"
+                    :class="$q.screen.lt.md ? 'q-ml-xs': 'q-my-sm'"
                     :color="utilState.appTheme ? 'amber' : 'indigo-11'"
                     aria-label="switch-theme-btn"
                     checked-icon="mdi-brightness-7"
-                    class="text-blue q-mb-sm"
+                    class="text-blue"
                     keep-color
                     unchecked-icon="mdi-weather-night"
                     @update:model-value="toggleTheme"
@@ -56,13 +78,13 @@
                   <transition
                     :enter-active-class="
                       $q.screen.lt.md ? 'animated slideInDown':
-                      (language === 'en-US'
+                      (utilState.language === 'en-US'
                         ? 'animated slideInLeft'
                         : 'animated slideInRight')
                     "
                     :leave-active-class="
                       $q.screen.lt.md ? 'animated slideOutUp':
-                      (language === 'en-US'
+                      (utilState.language === 'en-US'
                         ? 'animated slideOutLeft'
                         : 'animated slideOutRight')
                     "
@@ -81,29 +103,12 @@
 </template>
 
 <script>
-import {defineComponent, ref} from 'vue'
-import {useQuasar} from "quasar";
+import {defineComponent, computed} from 'vue'
+import {useI18n} from "vue-i18n";
+import {useLanguage} from "src/composables/language";
 import {useTheme} from "src/composables/theme";
 import {useUtilStore} from "stores/util-store";
 import MenuItem from 'components/MenuItem.vue'
-
-const menuList = [
-  {
-    title: 'About',
-    icon: 'mdi-badge-account-horizontal',
-    link: '/about'
-  },
-  {
-    title: 'Works',
-    icon: 'mdi-code-tags',
-    link: '/works'
-  },
-  // {
-  //   title: 'Resume',
-  //   icon: 'article',
-  //   link: '/'
-  // },
-]
 
 export default defineComponent({
   name: 'MainLayout',
@@ -112,16 +117,35 @@ export default defineComponent({
   },
 
   setup() {
-    const $q = useQuasar();
-    const { toggleTheme } = useTheme();
     const utilStore = useUtilStore();
-    let language = ref("en-US");
+    const {t} = useI18n({ useScope: "global" });
+    const menuList = computed(() => {
+      return [
+        {
+          title: t("about"),
+          icon: 'mdi-badge-account-horizontal',
+          link: '/'
+        },
+        {
+          title: t('works'),
+          icon: 'mdi-code-tags',
+          link: '/works'
+        },
+        // {
+        //   title: 'Resume',
+        //   icon: 'article',
+        //   link: '/'
+        // },
+      ];
+    });
+    const {changeLanguage} = useLanguage();
+    const {toggleTheme} = useTheme();
 
     return {
       menuList,
-      $q,
-      language,
       utilState: utilStore.$state,
+      t,
+      changeLanguage,
       toggleTheme,
     }
   }

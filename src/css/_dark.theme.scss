@@ -6,14 +6,29 @@
   }
 
   .text-system-green{
-    color: var(--q-color-system-green-in-dark);
+    color: var(--q-color-system-green-in-dark) !important;
   }
   .bg-system-green{
-    background-color: var(--q-color-system-green-in-dark);
+    background-color: var(--q-color-system-green-in-dark) !important;
+  }
+  .text-section{
+    color: var(--q-color-section-bg-in-dark) !important;
+  }
+  .bg-section{
+    background: var(--q-color-section-bg-in-dark) !important;
+  }
+  .text-page{
+    color: var(--q-color-page-bg-in-dark) !important;
+  }
+  .bg-page{
+    background: var(--q-color-page-bg-in-dark) !important;
   }
 
   .text-on-green{
     color: $indigo !important;
+  }
+  .system-text{
+    color: var(--q-color-text-in-dark) !important;
   }
 
   .profile-image:after {

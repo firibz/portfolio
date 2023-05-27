@@ -1,7 +1,8 @@
 <template>
   <q-item
     v-ripple
-    :class="$q.screen.lt.md ? 'inline-block' : ''"
+    class="q-my-sm drawer-item"
+    :class="$q.screen.lt.md ? 'inline-block q-mx-xs' : 'q-my-sm'"
     :to="link"
     active-class="text-system-green"
     clickable

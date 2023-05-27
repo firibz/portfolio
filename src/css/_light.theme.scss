@@ -6,14 +6,29 @@
   }
 
   .text-system-green{
-    color: var(--q-color-system-green-in-light);
+    color: var(--q-color-system-green-in-light) !important;
 }
   .bg-system-green{
-    background-color: var(--q-color-system-green-in-light);
+    background-color: var(--q-color-system-green-in-light) !important;
+  }
+  .text-section{
+    color: var(--q-color-section-bg-in-light) !important;
+  }
+  .bg-section{
+    background: var(--q-color-section-bg-in-light) !important;
+  }
+  .text-page{
+    color: var(--q-color-page-bg-in-light) !important;
+  }
+  .bg-page{
+    background: var(--q-color-page-bg-in-light) !important;
   }
 
   .text-on-green{
     color: #fff !important;
+  }
+  .system-text{
+    color: var(--q-color-text-in-light) !important;
   }
 
   .profile-image:before {

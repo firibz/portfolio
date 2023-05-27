@@ -7,7 +7,7 @@ const langList = import.meta.glob('../../node_modules/quasar/lang/(en-US|fa-IR).
 // import.meta.glob('../../node_modules/quasar/lang/(de|fr).mjs')
 
 export default async () => {
-  let langIso = JSON.parse(localStorage.getItem('lang')) || 'fa-IR';
+  let langIso = JSON.parse(localStorage.getItem('lang')) || 'en-US';
 
   try {
     langList[`../../node_modules/quasar/lang/${langIso}.mjs`]().then(lang => {

@@ -72,8 +72,8 @@
                   />
                 </div>
                 <div class="column full-width text-center justify-between">
-                  <span class="text-h4 q-mt-sm">Fariborz Korevli</span>
-                  <span style="letter-spacing: 1px" class="text-h6 text-system-green q-mt-sm">Front-end developer</span>
+                  <span class="text-h4 q-mt-sm">{{t("fullName")}}</span>
+                  <span style="letter-spacing: 1px" class="text-h6 text-system-green q-mt-sm">{{t("job")}}</span>
                   <div class="text-center q-mt-md">
                     <q-btn v-for="socialItem in SocialMediaItems" :key="socialItem.name"
                            class="q-pa-xs team-btn relative-position q-mx-sm"
@@ -85,7 +85,7 @@
                            :href="socialItem.link"/>
                   </div>
                   <hr class="q-mt-xl full-width section-hr"/>
-                  <q-btn label="Download Resume" icon="mdi-cloud-download" class="download-btn" flat/>
+                  <q-btn :label="t('downloadResume')" icon="mdi-cloud-download" class="download-btn" flat/>
                   <hr v-if="$q.screen.lt.md" class="q-mb-lg full-width section-hr"/>
                 </div>
 

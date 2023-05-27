@@ -21,12 +21,20 @@
   --q-color-lemon-yellow: #edff20;
 }
 
-body {
+html[dir="rtl"],
+html[dir="rtl"] body {
   font-size: 16px;
-   font-family: "Poppins", sans-serif;
+   font-family: 'Vazir FD', sans-serif;
    -webkit-font-smoothing: antialiased;
    -webkit-text-size-adjust: 100%;
  }
+html[dir="ltr"],
+html[dir="ltr"] body {
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+}
 
 .image-cover-top{
   object-fit: cover;
@@ -96,6 +104,7 @@ body {
 
 .drawer-item{
   min-width: 84px;
+  padding: 8px 8px !important;
 }
 
 .team-btn {

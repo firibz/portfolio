@@ -2326,6 +2326,13 @@ pinia@^2.0.11:
     "@vue/devtools-api" "^6.5.0"
     vue-demi "*"
 
+postcss-rtlcss@^4.0.6:
+  version "4.0.6"
+  resolved "https://registry.yarnpkg.com/postcss-rtlcss/-/postcss-rtlcss-4.0.6.tgz#86b58d2b4aa95396eb85065c14a679f0602a95d6"
+  integrity sha512-YNm6g2Y7Gngqtrpq3GC7cUkzH5Gq7aB+Lw9MSgF9s2ro1BDY7W4zqnd15g2ueatUUpSTg2/F5KDjQoTdjhbAKg==
+  dependencies:
+    rtlcss "4.1.0"
+
 postcss-selector-parser@^6.0.9:
   version "6.0.12"
   resolved "https://registry.yarnpkg.com/postcss-selector-parser/-/postcss-selector-parser-6.0.12.tgz#2efae5ffab3c8bfb2b7fbf0c426e3bca616c4abb"
@@ -2339,7 +2346,7 @@ postcss-value-parser@^4.2.0:
   resolved "https://registry.yarnpkg.com/postcss-value-parser/-/postcss-value-parser-4.2.0.tgz#723c09920836ba6d3e5af019f92bc0971c02e514"
   integrity sha512-1NNCs6uurfkVbeXG4S8JFT9t19m45ICnif8zWLd5oPSZ50QnwMfK+H3jv408d4jw/7Bttv5axS5IiHoLaVNHeQ==
 
-postcss@^8.1.10, postcss@^8.4.13, postcss@^8.4.14:
+postcss@^8.1.10, postcss@^8.4.13, postcss@^8.4.14, postcss@^8.4.21:
   version "8.4.23"
   resolved "https://registry.yarnpkg.com/postcss/-/postcss-8.4.23.tgz#df0aee9ac7c5e53e1075c24a3613496f9e6552ab"
   integrity sha512-bQ3qMcpF6A/YjR55xtoTr0jGOlnPOKAIMdOWiv0EIT6HVPEaJiJB4NLljSbiHoC2RX7DN5Uvjtpbg1NPdwv1oA==
@@ -2526,6 +2533,16 @@ rollup-plugin-visualizer@^5.5.4:
   integrity sha512-/qxNTG7FbmefJWoeeYJFbHehJ2HNWnjkAFRKzWN/45eNBBF/r8lo992CwcJXEzyVxs5FmfId+vTSTQDb+bxA+g==
   optionalDependencies:
     fsevents "~2.3.2"
+
+rtlcss@4.1.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/rtlcss/-/rtlcss-4.1.0.tgz#f69b78d9752c970ddfe2aa590896f44353ab1c98"
+  integrity sha512-W+N4hh0nVqVrrn3mRkHakxpB+c9cQ4CRT67O39kgA+1DjyhrdsqyCqIuHXyvWaXn4/835n+oX3fYJCi4+G/06A==
+  dependencies:
+    escalade "^3.1.1"
+    picocolors "^1.0.0"
+    postcss "^8.4.21"
+    strip-json-comments "^3.1.1"
 
 run-async@^2.4.0:
   version "2.4.1"
@@ -2870,6 +2887,11 @@ vary@~1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/vary/-/vary-1.1.2.tgz#2299f02c6ded30d4a5961b0b9f74524a18f634fc"
   integrity sha512-BNGbWLfd0eUPabhkXUVm0j8uuvREyTh5ovRa/dyow/BqAbZJyC+5fU+IzQOzmAKzYqYRAISoRhdQr3eIZ/PXqg==
+
+vazir-font@^30.1.0:
+  version "30.1.0"
+  resolved "https://registry.yarnpkg.com/vazir-font/-/vazir-font-30.1.0.tgz#68a86c31c17b9dcc9384e19f10f02331df97374c"
+  integrity sha512-XN2Uprw/Q3QhAAApITykf+v0l4p4FpqvIh0h2XDSJRjwUiYeDpwQxECQF/93ZOCDO2t8haBi6BZZqO8sifYNRg==
 
 vite@^2.9.13:
   version "2.9.15"

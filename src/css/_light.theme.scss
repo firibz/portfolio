@@ -1,0 +1,157 @@
+.body--light {
+  .card{
+    color: var(--q-color-text-in-light);
+    background: var(--q-color-section-bg-in-light);
+    position: relative;
+  }
+
+  .text-system-green{
+    color: var(--q-color-system-green-in-light);
+}
+  .bg-system-green{
+    background-color: var(--q-color-system-green-in-light);
+  }
+
+  .profile-image:before {
+    content: "";
+    position: absolute;
+    background: var(--q-color-section-bg-in-light);
+    transform: rotate(12deg);
+    -webkit-transform: rotate(12deg);
+    -moz-transform: rotate(12deg);
+    -o-transform: rotate(12deg);
+    left: -25%;
+    bottom: -63%;
+    width: 100%;
+    height: 70%;
+    z-index: 3;
+  }
+  .profile-image:after {
+    content: "";
+    bottom: -63%;
+    width: 100%;
+    height: 70%;
+    left: auto;
+    right: -25%;
+    transform: rotate(-8deg);
+    -webkit-transform: rotate(-8deg);
+    -moz-transform: rotate(-8deg);
+    -o-transform: rotate(-8deg);
+    position: absolute;
+    background: var(--q-color-section-bg-in-light);
+    z-index: 3;
+  }
+
+  .dynamic-background {
+    background: var(--q-color-page-bg-in-light);
+    background: -webkit-linear-gradient(top left, var(--q-color-page-bg-in-light) 0%, var(--q-color-page-bg-in-light-secondary) 100%);
+    background: linear-gradient(to bottom right, var(--q-color-page-bg-in-light) 0%, var(--q-color-page-bg-in-light-secondary) 100%);
+    position: fixed;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+  .dynamic-background span {
+    list-style: none;
+    display: block;
+    width: 80px;
+    height: 80px;
+    background-color: hsla(0,0%,100%,.1);
+    bottom: -320px;
+    -webkit-animation: light_move 50s infinite;
+    animation: light_move 50s infinite;
+    transition-timing-function: linear;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    position: absolute;
+  }
+  @keyframes light_move {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-1500px) rotate(600deg);
+    }
+  }
+  .dynamic-background span:first-child {
+    left: 10%;
+  }
+  .dynamic-background span:nth-child(2) {
+    left: 20%;
+    width: 160px;
+    height: 160px;
+    -webkit-animation-delay: 2s;
+    animation-delay: 2s;
+    -webkit-animation-duration: 34s;
+    animation-duration: 34s;
+  }
+  .dynamic-background span:nth-child(3) {
+    left: 25%;
+    -webkit-animation-delay: 4s;
+    animation-delay: 4s;
+  }
+  .dynamic-background span:nth-child(4) {
+    left: 40%;
+    width: 120px;
+    height: 120px;
+    -webkit-animation-duration: 44s;
+    animation-duration: 44s;
+  }
+  .dynamic-background span:nth-child(5) {
+    left: 70%;
+  }
+  .dynamic-background span:nth-child(6) {
+    left: 80%;
+    width: 240px;
+    height: 240px;
+    -webkit-animation-delay: 3s;
+    animation-delay: 3s;
+  }
+  .dynamic-background span:nth-child(7) {
+    left: 32%;
+    width: 320px;
+    height: 320px;
+    -webkit-animation-delay: 7s;
+    animation-delay: 7s;
+  }
+  .dynamic-background span:nth-child(8) {
+    left: 55%;
+    width: 40px;
+    height: 40px;
+    -webkit-animation-delay: 15s;
+    animation-delay: 15s;
+    -webkit-animation-duration: 80s;
+    animation-duration: 80s;
+  }
+  .dynamic-background span:nth-child(9) {
+    left: 25%;
+    width: 20px;
+    height: 20px;
+    -webkit-animation-delay: 2s;
+    animation-delay: 2s;
+    -webkit-animation-duration: 80s;
+    animation-duration: 80s;
+  }
+  .dynamic-background span:nth-child(10) {
+    left: 90%;
+    width: 320px;
+    height: 320px;
+    -webkit-animation-delay: 22s;
+    animation-delay: 22s;
+  }
+  .dynamic-background span:nth-child(12),
+  .dynamic-background span:nth-child(13),
+  .dynamic-background span:nth-child(14),
+  .dynamic-background span:nth-child(15),
+  .dynamic-background span:nth-child(16),
+  .dynamic-background span:nth-child(17),
+  .dynamic-background span:nth-child(18),
+  .dynamic-background span:nth-child(19),
+  .dynamic-background span:nth-child(20) {
+    display: none;
+  }
+}

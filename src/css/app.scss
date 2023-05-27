@@ -129,3 +129,18 @@ html[dir="ltr"] body {
   -moz-border-radius: 30px;
   -webkit-border-radius: 30px;
 }
+
+.page-section:before, .page-section:after{
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 20px;
+  height: 24px;
+  z-index: 3;
+}
+.page-section:before{
+  top: 16px;
+}
+.page-section:after{
+  bottom: 16px;
+}

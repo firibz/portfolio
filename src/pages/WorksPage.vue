@@ -1,16 +1,13 @@
 <template>
-  <div class="fit column full-width card"
-       :class="$q.screen.lt.md ? 'custom-rounded-borders q-pa-lg' : 'card custom-rounded-borders-right q-px-xl q-py-lg'"
-       style="display: flex">
-    <div v-if="utilState.language === 'fa-IR'" class="relative-position text-h5 text-bold">
-      <span class="text-system-green section-title text-bold">{{ t("sample") }}</span> {{ t("myWorks") }}
-    </div>
-    <div v-else class="relative-position text-h5 text-bold">
-      <span class="text-system-green section-title text-bold">{{ t("my") }}</span> {{ t("works") }}
-    </div>
-    <hr class="full-width q-mt-lg q-mb-xl block title-hr"/>
-
-  </div>
+      <div class="column col-xs-12 justify-start">
+        <div v-if="utilState.language === 'fa-IR'" class="relative-position text-h5 text-bold">
+          <span class="text-system-green section-title text-bold">{{ t("sample") }}</span> {{ t("myWorks") }}
+        </div>
+        <div v-else class="relative-position text-h5 text-bold">
+          <span class="text-system-green section-title text-bold">{{ t("my") }}</span> {{ t("works") }}
+        </div>
+        <hr class="full-width q-mt-lg q-mb-xl block title-hr"/>
+      </div>
 </template>
 
 <script>

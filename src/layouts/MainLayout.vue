@@ -2,9 +2,9 @@
   <q-layout view="lHh Lpr lFf">
     <q-page-container>
       <q-page class="flex flex-center">
-        <div class="row full-width justify-center container">
+        <div class="row full-width justify-center">
           <div class="column full-height col-xs-12 col-sm-9 col-md-12 col-xl-10">
-            <div class="row full-height full-width justify-center">
+            <div class="row full-width justify-center container">
               <div :class="$q.screen.lt.md ? '' : 'q-pr-sm'"
                    class="column full-height col-xs-11 col-md-1 items-end">
                 <div
@@ -54,62 +54,64 @@
                 </div>
               </div>
               <div :class="$q.screen.lt.md ? 'order-first custom-rounded-borders-top' : 'card custom-rounded-borders'"
-                   class="column full-height col-xs-11 col-md-4 items-center card card-shadow-left">
+                   class="column full-height col-xs-11 col-md-4 items-center justify-between card card-shadow-left">
                 <div class="relative-position profile-image-size">
                   <q-img
                     v-if="$q.dark.isActive"
-                    alt="Quasar logo"
+                    alt="profile picture of Fariborz"
                     class="custom-rounded-borders-top fit profile-image profile-image-size"
                     fit="cover"
                     src="~assets/images/profile-dark-2.jpg"
                   />
                   <q-img
                     v-else
-                    alt="Quasar logo"
+                    alt="profile picture of Fariborz"
                     class="custom-rounded-borders-top fit profile-image profile-image-size"
                     fit="cover"
                     src="~assets/images/profile-light.jpg"
                   />
                 </div>
-                <div class="column full-width text-center justify-between">
-                  <span class="text-h4 q-mt-sm">{{t("fullName")}}</span>
-                  <span style="letter-spacing: 1px" class="text-h6 text-system-green q-mt-sm">{{t("job")}}</span>
-                  <div class="text-center q-mt-md">
-                    <q-btn v-for="socialItem in SocialMediaItems" :key="socialItem.name"
-                           class="q-pa-xs team-btn relative-position q-mx-sm"
-                           dense
-                           flat
-                           glossy
-                           :icon="socialItem.icon"
-                           target="_blank"
-                           :href="socialItem.link"/>
-                  </div>
-                  <hr class="q-mt-xl full-width section-hr"/>
-                  <q-btn :label="t('downloadResume')" icon="mdi-cloud-download" class="download-btn" flat/>
-                  <hr v-if="$q.screen.lt.md" class="q-mb-lg full-width section-hr"/>
+                <span class="text-h4 q-mt-sm">{{ t("fullName") }}</span>
+                <span class="text-h6 text-system-green q-mt-sm" style="letter-spacing: 1px">{{ t("job") }}</span>
+                <div class="text-center q-mt-md">
+                  <q-btn v-for="socialItem in SocialMediaItems" :key="socialItem.name"
+                         :href="socialItem.link"
+                         :icon="socialItem.icon"
+                         class="q-pa-xs team-btn relative-position q-mx-sm"
+                         dense
+                         flat
+                         glossy
+                         target="_blank"/>
                 </div>
-
+                <hr class="q-mt-xl full-width section-hr"/>
+                <q-btn :label="t('downloadResume')" class="full-width download-btn" flat icon="mdi-cloud-download"/>
+                <hr v-if="$q.screen.lt.md" class="q-mb-lg full-width section-hr"/>
               </div>
-              <div class="column col-xs-11 col-md-6 overflow-hidden q-py-md">
-                <router-view v-slot="{ Component }">
-                  <transition
-                    :enter-active-class="
+              <div class="column col-xs-11 col-md-6 full-height page-section relative-position overflow-hidden q-py-md">
+                <div
+                  :class="$q.screen.lt.md ? 'custom-rounded-borders q-pa-lg' : 'card custom-rounded-borders-right q-px-xl q-py-lg'"
+                  class="row full-width card section-container full-height overflow-auto"
+                  style="display: flex">
+                  <router-view v-slot="{ Component }">
+                    <transition
+                      :enter-active-class="
                       $q.screen.lt.md ? 'animated slideInDown':
                       (utilState.language === 'en-US'
                         ? 'animated slideInLeft'
                         : 'animated slideInRight')
                     "
-                    :leave-active-class="
+                      :leave-active-class="
                       $q.screen.lt.md ? 'animated slideOutUp':
                       (utilState.language === 'en-US'
                         ? 'animated slideOutLeft'
                         : 'animated slideOutRight')
                     "
-                    mode="out-in"
-                  >
-                    <component :is="Component"/>
-                  </transition>
-                </router-view>
+                      mode="out-in"
+                    >
+                      <component :is="Component"/>
+                    </transition>
+                  </router-view>
+                </div>
               </div>
             </div>
           </div>
@@ -162,7 +164,7 @@ export default defineComponent({
 
   setup() {
     const utilStore = useUtilStore();
-    const {t} = useI18n({ useScope: "global" });
+    const {t} = useI18n({useScope: "global"});
     const menuList = computed(() => {
       return [
         {

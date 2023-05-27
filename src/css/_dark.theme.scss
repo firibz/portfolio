@@ -76,6 +76,10 @@
     background: linear-gradient( 135deg, rgba(164, 255, 145, 0.4) 0%, rgba(164, 255, 145, 0.01) 100% );
   }
 
+  .page-section:before, .page-section:after{
+    background: var(--q-color-section-bg-in-dark);
+  }
+
   .dynamic-background {
     background: var(--q-color-page-bg-in-dark);
     position: fixed;

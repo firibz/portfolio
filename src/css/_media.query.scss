@@ -24,9 +24,13 @@
 }
 
 @media only screen and (min-width: $breakpoint-md-min) {
-  //.container{
-  //  height: calc(100vh - 10vh - 10vh);
-  //}
+  .container{
+    height: calc(100vh - 10vh - 10vh);
+    max-height: 950px;
+    min-height: 650px;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+  }
 }
 
 @media only screen and (min-width: $breakpoint-sm-min) {

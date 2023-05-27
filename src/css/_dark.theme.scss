@@ -66,6 +66,15 @@
     height: 1px;
     background-image: linear-gradient(to right, rgba(229,230,232, 0), rgba(229,230,232, 0.75), rgba(229,230,232, 0));
   }
+  hr.title-hr {
+    border: 0;
+    height: 2px;
+    background-image: linear-gradient(to right, rgba(164, 255, 145, 0.5), rgba(164, 255, 145, 0.75), rgba(164, 255, 145, 0));
+  }
+
+  .section-title:before{
+    background: linear-gradient( 135deg, rgba(164, 255, 145, 0.4) 0%, rgba(164, 255, 145, 0.01) 100% );
+  }
 
   .dynamic-background {
     background: var(--q-color-page-bg-in-dark);

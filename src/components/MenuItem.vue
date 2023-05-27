@@ -12,7 +12,7 @@
       <q-item-label>
         <q-icon :name="icon" size="md"/>
       </q-item-label>
-      <q-item-label class="text-caption">{{ title }}</q-item-label>
+      <q-item-label class="text-caption text-bold">{{ title }}</q-item-label>
     </q-item-section>
   </q-item>
 </template>

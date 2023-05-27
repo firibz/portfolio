@@ -81,6 +81,15 @@
     height: 1px;
     background-image: linear-gradient(to right, rgba(50,50,50, 0), rgba(50,50,50, 0.75), rgba(50,50,50, 0));
   }
+  hr.title-hr {
+    border: 0;
+    height: 2px;
+    background-image: linear-gradient(to right, rgba(76,119,83, 0.5), rgba(76,119,83, 0.75), rgba(76,119,83, 0));
+  }
+
+  .section-title:before{
+    background: linear-gradient( 135deg, rgba(76, 119, 83, 0.4) 0%, rgba(76, 119, 83, 0.01) 100% );
+  }
 
   .dynamic-background {
     background: var(--q-color-page-bg-in-light);

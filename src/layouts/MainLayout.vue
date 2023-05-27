@@ -166,7 +166,7 @@ export default defineComponent({
     const menuList = computed(() => {
       return [
         {
-          title: t("about"),
+          title: t("aboutMe"),
           icon: 'mdi-badge-account-horizontal',
           link: '/'
         },

@@ -3,8 +3,13 @@
 
 export default {
   fullName: 'فریبرز کوراولی',
-  about: 'درباره‌ی من',
+  aboutMe: 'درباره‌ی من',
+  about: 'درباره‌ی',
+  me: 'من',
+  my: 'من',
   works: 'نمونه کارها',
+  myWorks: 'کارهای من',
+  sample: 'نمونه',
   job: 'برنامه نویس Front-end',
   downloadResume: 'دریافت رزومه',
 }

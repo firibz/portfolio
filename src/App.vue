@@ -4,8 +4,13 @@
 
 <script>
 import { defineComponent } from 'vue'
+import {useTheme} from "src/composables/theme";
 
 export default defineComponent({
-  name: 'App'
+  name: 'App',
+  setup(){
+    const { initTheme } = useTheme();
+    initTheme();
+  }
 })
 </script>

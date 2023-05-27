@@ -1,30 +1,7 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-
     <q-page-container>
       <q-page class="flex flex-center">
-        <div class="dynamic-background">
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
         <div class="row full-width justify-center container">
           <div class="column full-height col-xs-12 col-sm-9 col-md-12 col-xl-10">
             <div class="row full-height full-width justify-center">
@@ -43,8 +20,8 @@
                     />
                   </q-list>
                   <q-toggle
-                    v-model="appTheme"
-                    :color="appTheme ? 'amber' : 'indigo-11'"
+                    v-model="utilState.appTheme"
+                    :color="utilState.appTheme ? 'amber' : 'indigo-11'"
                     aria-label="switch-theme-btn"
                     checked-icon="mdi-brightness-7"
                     class="text-blue q-mb-sm"
@@ -56,22 +33,20 @@
               </div>
               <div :class="$q.screen.lt.md ? 'order-first custom-rounded-borders-top' : 'card custom-rounded-borders'"
                    class="column full-height col-xs-11 col-md-4 items-center card card-shadow-left">
-                <div class="relative-position" style="width: 100%; height: 60%; max-height: 400px">
+                <div class="relative-position profile-image-size">
                   <q-img
                     v-if="$q.dark.isActive"
                     alt="Quasar logo"
-                    class="custom-rounded-borders-top fit profile-image"
+                    class="custom-rounded-borders-top fit profile-image profile-image-size"
                     fit="cover"
                     src="~assets/images/profile-dark-2.jpg"
-                    style="width: 100%; height: 60%; max-height: 400px"
                   />
                   <q-img
                     v-else
                     alt="Quasar logo"
-                    class="custom-rounded-borders-top fit profile-image"
+                    class="custom-rounded-borders-top fit profile-image profile-image-size"
                     fit="cover"
                     src="~assets/images/profile-light.jpg"
-                    style="width: 100%; height: 60%; max-height: 400px"
                   />
                 </div>
 
@@ -108,6 +83,8 @@
 <script>
 import {defineComponent, ref} from 'vue'
 import {useQuasar} from "quasar";
+import {useTheme} from "src/composables/theme";
+import {useUtilStore} from "stores/util-store";
 import MenuItem from 'components/MenuItem.vue'
 
 const menuList = [
@@ -136,30 +113,17 @@ export default defineComponent({
   },
 
   setup() {
-    let language = ref("en-US");
     const $q = useQuasar();
-    let appTheme = ref(true);
+    const { toggleTheme } = useTheme();
+    const utilStore = useUtilStore();
+    let language = ref("en-US");
 
-    let dark = JSON.parse(localStorage.getItem("dark"));
-    dark = typeof dark === "boolean" ? dark : $q.dark.isActive;
-
-    if (dark !== undefined && dark !== null) {
-      appTheme.value = !dark;
-      $q.dark.set(dark);
-    } else {
-      appTheme.value = true;
-      $q.dark.set(false);
-    }
-    const toggleTheme = (value) => {
-      $q.dark.set(!value);
-      localStorage.setItem("dark", JSON.stringify(!value));
-    };
     return {
       menuList,
-      language,
-      appTheme,
-      toggleTheme,
       $q,
+      language,
+      utilState: utilStore.$state,
+      toggleTheme,
     }
   }
 })

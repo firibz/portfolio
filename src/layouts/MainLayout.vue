@@ -23,7 +23,7 @@
                     dense
                     glossy
                     no-caps
-                    padding="4px 12px"
+                    padding="4px 13px"
                     rounded
                     style="height: 32px;"
                     text-color="system-text"

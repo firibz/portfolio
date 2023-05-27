@@ -11,7 +11,7 @@
                   :class="$q.screen.lt.md ? 'full-width row justify-center card custom-rounded-borders-bottom' : 'column items-center card custom-rounded-borders'"
                   style="display: flex">
                   <q-list padding>
-                    <MenuItem
+                    <menu-item
                       v-for="item in menuList"
                       :key="item.title"
                       :title="item.title"
@@ -107,7 +107,6 @@ const menuList = [
 
 export default defineComponent({
   name: 'MainLayout',
-
   components: {
     MenuItem
   },

@@ -24,4 +24,5 @@ export default {
   bestAnime: 'The Best Anime: ',
   bestSeries: 'The best series: ',
   otherInterests: 'Also, I enjoy listening to music and playing video games',
+  seeMyWorks: 'You can check out my work samples to get a better idea of what I do',
 }

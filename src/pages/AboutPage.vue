@@ -21,10 +21,16 @@
           <span class="text-system-green section-title text-bold">{{ t("my") }}</span> {{ t("interests") }}
         </div>
         <hr class="full-width q-mt-lg q-mb-lg block title-hr"/>
-        <div class="row">
-          <div v-for="interest in interestsList" :key="interest.title" class="col-xs-12">
-            <q-icon :name="interest.icon"></q-icon>
-            {{ interest.title }} {{ interest.value }}
+        <div class="row justify-between">
+          <div v-for="interest in interestsList" :key="interest.value" class="column col-xs-6 col-md-4 q-pa-md text-center items-center">
+            <q-btn
+              :icon="interest.icon"
+              class="q-pa-sm relative-position q-mb-xs no-pointer-events custom-rounded-borders"
+              size="lg"
+              flat
+              glossy/>
+            <span class="text-caption text-bold">{{ interest.title }}</span>
+            <span class="text-caption">{{ interest.value }}</span>
           </div>
         </div>
       </div>
@@ -43,11 +49,6 @@ export default defineComponent({
     const interestsList = computed(() => {
       return [
         {
-          title: t("bestBook"),
-          value: 'Harry Potter collection',
-          icon: 'mdi-book',
-        },
-        {
           title: t("bestMovie"),
           value: 'Inception',
           icon: 'mdi-movie-open-star',
@@ -63,8 +64,18 @@ export default defineComponent({
           icon: 'mdi-filmstrip',
         },
         {
-          title: t("otherInterests"),
-          value: '',
+          title: t("bestBook"),
+          value: 'Harry Potter collection',
+          icon: 'mdi-book',
+        },
+        {
+          title: '',
+          value: t("otherInterests"),
+          icon: 'mdi-gamepad-variant',
+        },
+        {
+          title: '',
+          value: t("seeMyWorks"),
           icon: 'mdi-emoticon-cool',
         },
       ];

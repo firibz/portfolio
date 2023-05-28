@@ -11,7 +11,7 @@
 
       <q-btn
         class="q-mt-xl text-on-green"
-        color="system-green"
+        color="system-primary"
         unelevated
         to="/"
         label="Go Home"

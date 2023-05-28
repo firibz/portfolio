@@ -28,7 +28,7 @@
                     style="height: 32px;"
                     text-color="system-text"
                     toggle-color="green-11"
-                    toggle-text-color="system-green"
+                    toggle-text-color="system-primary"
                     @update:model-value="changeLanguage"
                   />
                   <q-list :class="$q.screen.lt.md ? '': 'full-width'">
@@ -72,8 +72,8 @@
                   />
                 </div>
                 <span class="text-h4 q-mt-sm">{{ t("fullName") }}</span>
-                <span class="text-caption text-system-green  q-mt-sm">+{{ experienceYears }} {{t("experienceYears")}}</span>
-                <span class="text-h6 text-system-green" style="letter-spacing: 1px">{{ t("job") }}</span>
+                <span class="text-caption text-system-primary  q-mt-sm">+{{ experienceYears }} {{t("experienceYears")}}</span>
+                <span class="text-h6 text-system-primary" style="letter-spacing: 1px">{{ t("job") }}</span>
                 <div class="text-center q-mt-sm">
                   <q-btn v-for="socialItem in SocialMediaItems" :key="socialItem.name"
                          :href="socialItem.link"

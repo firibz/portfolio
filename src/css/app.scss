@@ -6,9 +6,9 @@
 :root {
   //--q-system-dark: #1d1b2f;
   //--q-system-semi-dark: #222041;#a4ff91
-  //--q-color-system-green-dark: #99ffb1;
-  --q-color-system-green-in-dark: #a4ff91;
-  --q-color-system-green-in-light: #4c7753;
+  //--q-color-system-primary-dark: #99ffb1;
+  --q-color-system-primary-in-dark: #a4ff91;
+  --q-color-system-primary-in-light: #4c7753;
   --q-color-text-in-dark: #fff;
   --q-color-text-in-light: #323232;
   --q-color-section-bg-in-dark: #1D1D1D;
@@ -51,7 +51,7 @@ html[dir="ltr"] body {
 }
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: var(--q-color-system-green-in-light);
+  background: var(--q-color-system-primary-in-light);
   border-radius: 8px;
 }
 

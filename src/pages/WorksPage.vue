@@ -1,10 +1,10 @@
 <template>
       <div class="column col-xs-12 justify-start">
         <div v-if="utilState.language === 'fa-IR'" class="relative-position text-h5 text-bold">
-          <span class="text-system-green section-title text-bold">{{ t("sample") }}</span> {{ t("myWorks") }}
+          <span class="text-system-primary section-title text-bold">{{ t("sample") }}</span> {{ t("myWorks") }}
         </div>
         <div v-else class="relative-position text-h5 text-bold">
-          <span class="text-system-green section-title text-bold">{{ t("my") }}</span> {{ t("works") }}
+          <span class="text-system-primary section-title text-bold">{{ t("my") }}</span> {{ t("works") }}
         </div>
         <hr class="full-width q-mt-lg q-mb-xl block title-hr"/>
       </div>

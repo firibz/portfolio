@@ -1,7 +1,7 @@
 <template>
       <div class="column col-xs-12 justify-start">
         <div class="relative-position text-h5 text-bold">
-          <span class="text-system-green section-title text-bold">{{ t("about") }}</span> {{ t("me") }}
+          <span class="text-system-primary section-title text-bold">{{ t("about") }}</span> {{ t("me") }}
         </div>
         <hr class="full-width q-mt-lg q-mb-lg block title-hr"/>
         <div class="q-mb-xl">
@@ -15,10 +15,10 @@
           <span>{{ t("aboutMeSection5") }}</span>
         </div>
         <div v-if="utilState.language === 'fa-IR'" class="relative-position text-h5 text-bold">
-          <span class="text-system-green section-title text-bold">{{ t("interests") }}</span> {{ t("my") }}
+          <span class="text-system-primary section-title text-bold">{{ t("interests") }}</span> {{ t("my") }}
         </div>
         <div v-else class="relative-position text-h5 text-bold">
-          <span class="text-system-green section-title text-bold">{{ t("my") }}</span> {{ t("interests") }}
+          <span class="text-system-primary section-title text-bold">{{ t("my") }}</span> {{ t("interests") }}
         </div>
         <hr class="full-width q-mt-lg q-mb-lg block title-hr"/>
         <div class="row justify-between">

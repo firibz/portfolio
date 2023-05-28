@@ -5,11 +5,11 @@
     position: relative;
   }
 
-  .text-system-green{
-    color: var(--q-color-system-green-in-dark) !important;
+  .text-system-primary{
+    color: var(--q-color-system-primary-in-dark) !important;
   }
-  .bg-system-green{
-    background-color: var(--q-color-system-green-in-dark) !important;
+  .bg-system-primary{
+    background-color: var(--q-color-system-primary-in-dark) !important;
   }
   .text-section{
     color: var(--q-color-section-bg-in-dark) !important;
@@ -47,13 +47,13 @@
 
   .team-btn:hover {
     transition: 0.5s;
-    -webkit-box-shadow: -1px 1px 1px 0px var(--q-color-system-green-in-dark);
-    -moz-box-shadow: -1px 1px 1px 0px var(--q-color-system-green-in-dark);
-    box-shadow: -1px 1px 1px 0px var(--q-color-system-green-in-dark);
-    color: var(--q-color-system-green-in-dark) !important;
+    -webkit-box-shadow: -1px 1px 1px 0px var(--q-color-system-primary-in-dark);
+    -moz-box-shadow: -1px 1px 1px 0px var(--q-color-system-primary-in-dark);
+    box-shadow: -1px 1px 1px 0px var(--q-color-system-primary-in-dark);
+    color: var(--q-color-system-primary-in-dark) !important;
   }
   .download-btn:hover{
-    color: var(--q-color-system-green-in-dark) !important;
+    color: var(--q-color-system-primary-in-dark) !important;
   }
 
   hr.green-hr {

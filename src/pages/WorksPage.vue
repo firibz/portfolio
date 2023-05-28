@@ -6,7 +6,7 @@
         <div v-else class="relative-position text-h5 text-bold">
           <span class="text-system-primary section-title text-bold">{{ t("my") }}</span> {{ t("works") }}
         </div>
-        <hr class="full-width q-mt-lg q-mb-xl block title-hr"/>
+        <hr class="full-width q-mt-md q-mb-xl block title-hr"/>
       </div>
 </template>
 

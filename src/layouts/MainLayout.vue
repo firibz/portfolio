@@ -72,8 +72,9 @@
                   />
                 </div>
                 <span class="text-h4 q-mt-sm">{{ t("fullName") }}</span>
-                <span class="text-h6 text-system-green q-mt-sm" style="letter-spacing: 1px">{{ t("job") }}</span>
-                <div class="text-center q-mt-md">
+                <span class="text-caption text-system-green  q-mt-sm">+{{ experienceYears }} {{t("experienceYears")}}</span>
+                <span class="text-h6 text-system-green" style="letter-spacing: 1px">{{ t("job") }}</span>
+                <div class="text-center q-mt-sm">
                   <q-btn v-for="socialItem in SocialMediaItems" :key="socialItem.name"
                          :href="socialItem.link"
                          :icon="socialItem.icon"
@@ -83,9 +84,9 @@
                          glossy
                          target="_blank"/>
                 </div>
-                <hr class="q-mt-xl full-width section-hr"/>
+                <hr class="q-mt-lg full-width section-hr"/>
                 <q-btn :label="t('downloadResume')" class="full-width download-btn" flat icon="mdi-cloud-download"/>
-                <hr v-if="$q.screen.lt.md" class="q-mb-lg full-width section-hr"/>
+                <hr v-if="$q.screen.lt.md" class="q-mb-md full-width section-hr"/>
               </div>
               <div class="column col-xs-11 col-md-6 full-height page-section relative-position overflow-hidden q-py-md">
                 <div
@@ -165,6 +166,9 @@ export default defineComponent({
   setup() {
     const utilStore = useUtilStore();
     const {t} = useI18n({useScope: "global"});
+    const currentYear = new Date().getFullYear();
+    const startWorkYear = 2017;
+    const experienceYears = currentYear - startWorkYear;
     const menuList = computed(() => {
       return [
         {
@@ -189,6 +193,7 @@ export default defineComponent({
 
     return {
       SocialMediaItems,
+      experienceYears,
       menuList,
       utilState: utilStore.$state,
       t,

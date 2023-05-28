@@ -28,6 +28,7 @@
               class="q-pa-sm relative-position q-mb-xs no-pointer-events custom-rounded-borders"
               size="lg"
               flat
+              :aria-label="interest.name + ' icon'"
               glossy/>
             <span class="text-caption text-bold">{{ interest.title }}</span>
             <span class="text-caption">{{ interest.value }}</span>
@@ -49,31 +50,37 @@ export default defineComponent({
     const interestsList = computed(() => {
       return [
         {
+          name: "Best Movie",
           title: t("bestMovie"),
           value: 'Inception',
           icon: 'mdi-movie-open-star',
         },
         {
+          name: "Best Anime",
           title: t("bestAnime"),
           value: 'Death Note',
           icon: 'mdi-movie-filter',
         },
         {
+          name: "Best Series",
           title: t("bestSeries"),
           value: 'WestWorld, Severance and The big bang theory',
           icon: 'mdi-filmstrip',
         },
         {
+          name: "Best Book",
           title: t("bestBook"),
           value: 'Harry Potter collection',
           icon: 'mdi-book',
         },
         {
+          name: "Other Interests",
           title: '',
           value: t("otherInterests"),
           icon: 'mdi-gamepad-variant',
         },
         {
+          name: "See My Works",
           title: '',
           value: t("seeMyWorks"),
           icon: 'mdi-emoticon-cool',

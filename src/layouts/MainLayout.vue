@@ -78,6 +78,7 @@
                   <q-btn v-for="socialItem in SocialMediaItems" :key="socialItem.name"
                          :href="socialItem.link"
                          :icon="socialItem.icon"
+                         :aria-label="socialItem.name + ' link'"
                          class="q-pa-xs team-btn relative-position q-mx-sm"
                          dense
                          flat

@@ -73,7 +73,7 @@ export default defineComponent({
       {
         name: 'Staking and NFT landing sample',
         images: [
-          'src/assets/images/works/0 Staking and NFT landing sample/0.webp',
+          './src/assets/images/works/0 Staking and NFT landing sample/0.webp',
           'src/assets/images/works/0 Staking and NFT landing sample/1.webp',
           'src/assets/images/works/0 Staking and NFT landing sample/2.webp',
           'src/assets/images/works/0 Staking and NFT landing sample/3.webp',

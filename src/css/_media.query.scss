@@ -1,5 +1,8 @@
 //max queries
 @media only screen and (max-width: $breakpoint-lg-max) {
+  .work-gallery {
+    height: 20rem;
+  }
 }
 
 @media only screen and (max-width: $breakpoint-md-max) {
@@ -10,9 +13,15 @@
     padding-top: 3vh;
     padding-bottom: 3vh;
   }
+  .work-gallery {
+    height: 18rem;
+  }
 }
 
 @media only screen and (max-width: $breakpoint-xs-max) {
+  .work-gallery {
+    height: 15rem;
+  }
 }
 
 //-----------------------------------------------------------

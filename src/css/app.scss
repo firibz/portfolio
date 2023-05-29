@@ -44,10 +44,12 @@ html[dir="ltr"] body {
 /* Track */
 .body--dark ::-webkit-scrollbar-track {
   background: var(--q-color-section-bg-in-dark);
+  border-radius: 8px;
 }
 /* Track */
 .body--light ::-webkit-scrollbar-track {
   background: var(--q-color-section-bg-in-light);
+  border-radius: 8px;
 }
 /* Handle */
 ::-webkit-scrollbar-thumb {
@@ -155,6 +157,7 @@ html[dir="ltr"] body {
   left: 0;
   right: 20px;
   height: 24px;
+  border-radius: 8px;
   z-index: 3;
 }
 .page-section:before{
@@ -162,4 +165,16 @@ html[dir="ltr"] body {
 }
 .page-section:after{
   bottom: 16px;
+}
+.q-btn.no-hover .q-focus-helper {
+  display: none;
+}
+
+.work-gallery .q-carousel__slide {
+  border-radius: 16px;
+}
+.work-gallery .q-carousel__slide{
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
 }

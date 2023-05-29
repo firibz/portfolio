@@ -97,12 +97,12 @@ export default defineComponent({
       {
         name: 'Registration system of the Eghtesaad-e Bidaar brokerage',
         images: [
-          'public/images/works/2 Registration system of the Eghtesaad Bidaar brokerage/0.webp',
-          'images/works/2 Registration system of the Eghtesaad Bidaar brokerage/1.webp',
-          'images/works/2 Registration system of the Eghtesaad Bidaar brokerage/2.webp',
-          'images/works/2 Registration system of the Eghtesaad Bidaar brokerage/3.webp',
-          'images/works/2 Registration system of the Eghtesaad Bidaar brokerage/4.webp',
-          'images/works/2 Registration system of the Eghtesaad Bidaar brokerage/5.webp',
+          'images/works/2 Eghtesaad Bidaar brokerage registration system/0.webp',
+          'images/works/2 Eghtesaad Bidaar brokerage registration system/1.webp',
+          'images/works/2 Eghtesaad Bidaar brokerage registration system/2.webp',
+          'images/works/2 Eghtesaad Bidaar brokerage registration system/3.webp',
+          'images/works/2 Eghtesaad Bidaar brokerage registration system/4.webp',
+          'images/works/2 Eghtesaad Bidaar brokerage registration system/5.webp',
         ],
         slide: 0,
         fullscreen: false,

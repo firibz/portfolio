@@ -80,6 +80,17 @@
     background: var(--q-color-section-bg-in-dark);
   }
 
+  .system-primary-link:hover, .system-primary-hover:hover {
+    color: var(--q-color-system-primary-in-dark) !important;
+    transition: 0.5s;
+  }
+
+  .fix-border-in-images{
+    -webkit-box-shadow:inset 0 0 0 2px var(--q-color-section-bg-in-dark);
+    -moz-box-shadow:inset 0 0 0 2px var(--q-color-section-bg-in-dark);
+    box-shadow:inset 0 0 0 2px var(--q-color-section-bg-in-dark);
+  }
+
   .dynamic-background {
     background: var(--q-color-page-bg-in-dark);
     position: fixed;

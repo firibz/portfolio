@@ -7,14 +7,14 @@
       <span class="text-system-primary section-title text-bold">{{ t("my") }}</span> {{ t("works") }}
     </div>
     <hr class="full-width q-mt-md q-mb-lg block title-hr"/>
-    <div class="row full-width justify-center">
-      <q-btn class="text-center q-mt-sm no-hover"
-             flat
-             href="https://drive.google.com/drive/folders/1aIF8Tk2fmADzgg3k4h8_iPKdtHtAGAEL?usp=sharing"
-             target="_blank"
-             unelevated>
+    <div class="row full-width justify-center text-body1 q-py-xs">
+      <a class="system-primary-link"
+         href="https://drive.google.com/drive/folders/1aIF8Tk2fmADzgg3k4h8_iPKdtHtAGAEL?usp=sharing"
+         target="_blank">
+        <q-icon name="mdi-google-drive"/>
         View all on Google drive
-      </q-btn>
+        <q-icon name="mdi-open-in-new"/>
+      </a>
       <hr class="q-mb-md full-width section-hr"/>
     </div>
     <div class="row full-width">
@@ -36,8 +36,8 @@
             :aria-label="imageIndex"
             :img-src="galleryImage"
             :name="imageIndex"
-            class="cursor-pointer"
-            @click="galleryItem.fullscreen = !galleryItem.fullscreen"/>
+            class="cursor-pointer fix-border-in-images"
+            @click="$q.screen.lt.md ? '' : galleryItem.fullscreen = !galleryItem.fullscreen"/>
           <template v-slot:control>
             <q-carousel-control
               :offset="[18, 18]"
@@ -51,7 +51,16 @@
             </q-carousel-control>
           </template>
         </q-carousel>
-        <div class="text-caption text-center q-mt-sm">{{ galleryItem.name }}</div>
+        <div class="text-subtitle2 text-center q-mt-sm">
+          <div v-if="galleryItem.link">
+            <a class="system-primary-link" :href="galleryItem.link" target="_blank">
+              <q-icon name="mdi-link-variant"/>
+              {{ galleryItem.name }}
+              <q-icon name="mdi-open-in-new"/>
+            </a>
+          </div>
+          <span v-else>{{ galleryItem.name }}</span>
+        </div>
         <hr class="q-mb-md full-width section-hr"/>
       </div>
     </div>
@@ -71,19 +80,21 @@ export default defineComponent({
     const utilStore = useUtilStore();
     const imageGalleryItems = ref([
       {
-        name: 'Staking and NFT landing sample',
+        name: 'Staking and NFT landing web3 website',
         images: [
           'images/works/0 Staking and NFT landing sample/0.webp',
           'images/works/0 Staking and NFT landing sample/1.webp',
           'images/works/0 Staking and NFT landing sample/2.webp',
           'images/works/0 Staking and NFT landing sample/3.webp',
+          'images/works/0 Staking and NFT landing sample/4.webp',
+          'images/works/0 Staking and NFT landing sample/5.webp',
         ],
         slide: 0,
         fullscreen: false,
-        link: '',
+        link: 'https://ascendants-sample.web.app/',
       },
       {
-        name: 'SSP labels',
+        name: 'Saman Salamat Pajoh labeling system',
         images: [
           'images/works/1 SSP labels/0.webp',
           'images/works/1 SSP labels/1.webp',
@@ -93,6 +104,40 @@ export default defineComponent({
         ],
         slide: 0,
         fullscreen: false,
+        link: '',
+      },
+      {
+        name: 'ADR reporter system of Iran Food and Drug Administration(IRFDA)',
+        images: [
+          'images/works/4 Iran Food and Drug Administration(IRFDA)ADR reporter system/0.webp',
+          'images/works/4 Iran Food and Drug Administration(IRFDA)ADR reporter system/1.webp',
+          'images/works/4 Iran Food and Drug Administration(IRFDA)ADR reporter system/2.webp',
+          'images/works/4 Iran Food and Drug Administration(IRFDA)ADR reporter system/3.webp',
+          'images/works/4 Iran Food and Drug Administration(IRFDA)ADR reporter system/4.webp',
+          'images/works/4 Iran Food and Drug Administration(IRFDA)ADR reporter system/5.webp',
+          'images/works/4 Iran Food and Drug Administration(IRFDA)ADR reporter system/6.webp',
+          'images/works/4 Iran Food and Drug Administration(IRFDA)ADR reporter system/7.webp',
+          'images/works/4 Iran Food and Drug Administration(IRFDA)ADR reporter system/8.webp',
+        ],
+        slide: 0,
+        fullscreen: false,
+        link: 'https://adr-reporter.ttac.ir/',
+      },
+      {
+        name: 'Supply chain management system of Iran Food and Drug Administration(IRFDA)',
+        images: [
+          'images/works/5 Supply chain management (drag store subsystem)/0.webp',
+          'images/works/5 Supply chain management (drag store subsystem)/1.webp',
+          'images/works/5 Supply chain management (drag store subsystem)/2.webp',
+          'images/works/5 Supply chain management (drag store subsystem)/3.webp',
+          'images/works/5 Supply chain management (drag store subsystem)/4.webp',
+          'images/works/5 Supply chain management (drag store subsystem)/5.webp',
+          'images/works/5 Supply chain management (drag store subsystem)/6.webp',
+          'images/works/5 Supply chain management (drag store subsystem)/7.webp',
+        ],
+        slide: 0,
+        fullscreen: false,
+        link: 'https://statisticsreports.ttac.ir/',
       },
       {
         name: 'Registration system of the Eghtesaad-e Bidaar brokerage',
@@ -106,45 +151,17 @@ export default defineComponent({
         ],
         slide: 0,
         fullscreen: false,
+        link: '',
       },
       {
-        name: 'Sabad gardan landing page for Eghtesaad-e Bidaar brokerage',
+        name: 'Sabad gardan landing page of the Eghtesaad-e Bidaar brokerage',
         images: [
           'images/works/3 Sabad gardan landing page for Eghtesaad-e Bidaar brokerage/0.webp',
           'images/works/3 Sabad gardan landing page for Eghtesaad-e Bidaar brokerage/1.webp',
         ],
         slide: 0,
         fullscreen: false,
-      },
-      {
-        name: 'Iran Food and Drug Administration(IRFDA)ADR reporter system',
-        images: [
-          'images/works/4 Iran Food and Drug Administration(IRFDA)ADR reporter system/0.webp',
-          'images/works/4 Iran Food and Drug Administration(IRFDA)ADR reporter system/1.webp',
-          'images/works/4 Iran Food and Drug Administration(IRFDA)ADR reporter system/2.webp',
-          'images/works/4 Iran Food and Drug Administration(IRFDA)ADR reporter system/3.webp',
-          'images/works/4 Iran Food and Drug Administration(IRFDA)ADR reporter system/4.webp',
-          'images/works/4 Iran Food and Drug Administration(IRFDA)ADR reporter system/5.webp',
-          'images/works/4 Iran Food and Drug Administration(IRFDA)ADR reporter system/6.webp',
-          'images/works/4 Iran Food and Drug Administration(IRFDA)ADR reporter system/7.webp',
-        ],
-        slide: 0,
-        fullscreen: false,
-      },
-      {
-        name: 'Iran Food and Drug Administration(IRFDA), Supply chain management (drag store subsystem)',
-        images: [
-          'images/works/5 Supply chain management (drag store subsystem)/0.webp',
-          'images/works/5 Supply chain management (drag store subsystem)/1.webp',
-          'images/works/5 Supply chain management (drag store subsystem)/2.webp',
-          'images/works/5 Supply chain management (drag store subsystem)/3.webp',
-          'images/works/5 Supply chain management (drag store subsystem)/4.webp',
-          'images/works/5 Supply chain management (drag store subsystem)/5.webp',
-          'images/works/5 Supply chain management (drag store subsystem)/6.webp',
-          'images/works/5 Supply chain management (drag store subsystem)/7.webp',
-        ],
-        slide: 0,
-        fullscreen: false,
+        link: '',
       },
       {
         name: 'Web3js minting sample',
@@ -157,9 +174,10 @@ export default defineComponent({
         ],
         slide: 0,
         fullscreen: false,
+        link: 'https://web3-sample-test.web.app/',
       },
       {
-        name: 'Chat app',
+        name: 'Chat app Vue Firebase sample',
         images: [
           'images/works/7 Chat app/0.webp',
           'images/works/7 Chat app/1.webp',
@@ -170,15 +188,20 @@ export default defineComponent({
         ],
         slide: 0,
         fullscreen: false,
+        link: 'https://firibz-chat.web.app/',
       },
       {
         name: 'Others',
         images: [
           'images/works/8 Others/0.webp',
           'images/works/8 Others/1.webp',
+          'images/works/8 Others/2.webp',
+          'images/works/8 Others/3.webp',
+          'images/works/8 Others/4.webp',
         ],
         slide: 0,
         fullscreen: false,
+        link: '',
       },
     ])
 

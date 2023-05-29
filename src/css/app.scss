@@ -178,6 +178,14 @@ html[dir="ltr"] body {
   background-position: center;
   background-size: 100% 100%;
 }
-.work-gallery.fullscreen  .q-carousel__slide {
+.work-gallery.fullscreen .q-carousel__slide {
   background-size: 100% auto !important;
+}
+
+.system-primary-link, .system-primary-hover{
+  transition: 0.5s;
+}
+.system-primary-link, .system-primary-link:hover, .system-primary-link:focus, .system-primary-link:active, .system-primary-link:visited {
+  text-decoration: none;
+  color: inherit;
 }

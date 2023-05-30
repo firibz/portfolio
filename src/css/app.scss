@@ -189,3 +189,11 @@ html[dir="ltr"] body {
   text-decoration: none;
   color: inherit;
 }
+
+.work-gallery .q-carousel__thumbnail--inactive{
+  border: 1px solid #fff;
+}
+
+.work-gallery .q-carousel__thumbnail--active{
+  border: 1px solid var(--q-color-lemon-green);
+}

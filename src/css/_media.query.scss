@@ -2,6 +2,8 @@
 @media only screen and (max-width: $breakpoint-lg-max) {
   .work-gallery {
     height: 20rem;
+    //height: calc(20rem + 85px);
+    //padding-bottom: 85px;
   }
 }
 
@@ -15,12 +17,16 @@
   }
   .work-gallery {
     height: 18rem;
+    //height: calc(18rem + 85px);
+    //padding-bottom: 85px;
   }
 }
 
 @media only screen and (max-width: $breakpoint-xs-max) {
   .work-gallery {
     height: 15rem;
+    //height: calc(15rem + 85px);
+    //padding-bottom: 85px;
   }
 }
 

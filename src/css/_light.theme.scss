@@ -61,7 +61,7 @@
     z-index: 3;
   }
 
-  .team-btn:hover {
+  .team-btn:hover, .q-btn.system-primary-hover:hover {
     -webkit-box-shadow: -1px 1px 1px 0px var(--q-color-system-primary-in-light);
     -moz-box-shadow: -1px 1px 1px 0px var(--q-color-system-primary-in-light);
     box-shadow: -1px 1px 1px 0px var(--q-color-system-primary-in-light);

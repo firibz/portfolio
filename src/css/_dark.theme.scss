@@ -45,7 +45,7 @@
     z-index: 3;
   }
 
-  .team-btn:hover {
+  .team-btn:hover, .q-btn.system-primary-hover:hover {
     transition: 0.5s;
     -webkit-box-shadow: -1px 1px 1px 0px var(--q-color-system-primary-in-dark);
     -moz-box-shadow: -1px 1px 1px 0px var(--q-color-system-primary-in-dark);

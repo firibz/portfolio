@@ -26,4 +26,15 @@ export default {
   otherInterests: 'من عاشق موسیقی و بازی‌های کامپیوتری هم هستم',
   seeMyWorks: 'برای آشنایی بیشتر با کارهایی من، خوشحال میشم قسمت "نمونه کارها" رو ببینید',
   experienceYears: 'سال تجربه',
+  viewAllOnGoogleDrive: 'مشاهده‌ی همه در Google drive',
+  stakingAndNFTLandingWeb3Website: 'سایت web3 در مورد Staking و NFT landing',
+  sspLabelingSystem: 'سامانه‌ی برچسب گذاری سامان سلامت پژوه',
+  ADRReporterSystemOfIRFDA: 'سامانه‌ی ثبت گزارش عوارض و اشتباهات دارو پزشکی سازمان غدا و داروی ایران',
+  supplyChainManagementSystemOfIRFDA: 'سامانه‌ی زنجیره‌ی تامین سازمان غدا و داروی ایران',
+  registrationSystemOfEBBBrokerage: 'سامانه‌ی ثبت نام کارگزاری اقتصاد بیدار',
+  sabadGardanOfEBBBrokerage: 'سایت سبدگردان کارگزاری اقتصاد بیدار',
+  Web3jsMintingSample: 'نمونه‌ی Web3js minting app',
+  chatAppVueFirebaseSample: 'نمونه‌ی سایت چت با Vue و Firebase',
+  others: 'سایر',
+  projectsAccessNotice: 'بیشتر کارهای من یا احتیاج به احراز هویت و دسترسی مجاز دارند یا به صورت پروژه و کمپین های دوره ای بوده، به همین دلیل امکان کار کردن با آن ها برای شما وجود ندارد، با این وجود من سعی کردم تصاویر و یا در صورت امکان دموی آن ها را برای شما فراهم کنم.'
 }

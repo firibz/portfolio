@@ -1,29 +1,18 @@
 <template>
   <div class="column col-xs-12 justify-start">
     <div v-if="utilState.language === 'fa-IR'" class="relative-position text-h5 text-bold">
-      <span class="text-system-primary section-title text-bold">{{ t("sample") }}</span> {{ t("myWorks") }}
+      <span class="text-system-primary section-title text-bold">{{ t("sample") }}</span> {{ t("myWorks") }} *
     </div>
     <div v-else class="relative-position text-h5 text-bold">
-      <span class="text-system-primary section-title text-bold">{{ t("my") }}</span> {{ t("works") }}
+      <span class="text-system-primary section-title text-bold">{{ t("my") }}</span> {{ t("works") }} *
     </div>
     <hr class="full-width q-mt-md q-mb-lg block title-hr"/>
-    <div class="row full-width justify-center text-body1 q-py-xs">
-      <a class="system-primary-link"
-         href="https://drive.google.com/drive/folders/1aIF8Tk2fmADzgg3k4h8_iPKdtHtAGAEL?usp=sharing"
-         target="_blank">
-        <q-icon name="mdi-google-drive"/>
-        View all on Google drive
-        <q-icon name="mdi-open-in-new"/>
-      </a>
-      <hr class="q-mb-md full-width section-hr"/>
-    </div>
     <div class="row full-width">
-      <div v-for="(galleryItem, index) in imageGalleryItems" :key="galleryItem.name"
-           class="column q-px-sm q-py-md col-xs-12">
+      <div v-for="(galleryItem) in imageGalleryItems" :key="galleryItem.name"
+           class="column q-pb-lg q-px-sm col-xs-12">
         <q-carousel
           v-model="galleryItem.slide"
           v-model:fullscreen="galleryItem.fullscreen"
-          :aria-label="index"
           animated
           class="work-gallery"
           infinite
@@ -33,7 +22,6 @@
           <q-carousel-slide
             v-for="(galleryImage, imageIndex) in galleryItem.images"
             :key="galleryItem.name + imageIndex"
-            :aria-label="imageIndex"
             :img-src="galleryImage"
             :name="imageIndex"
             class="cursor-pointer fix-border-in-images"
@@ -44,6 +32,7 @@
               position="top-right"
             >
               <q-btn
+                :aria-label="'gallery item fullscreen button for ' + t(galleryItem.name)"
                 :icon="galleryItem.fullscreen ? 'mdi-fullscreen-exit' : 'mdi-fullscreen'" color="section" dense push round
                 text-color="system-primary"
                 @click="galleryItem.fullscreen = !galleryItem.fullscreen"
@@ -55,14 +44,37 @@
           <div v-if="galleryItem.link">
             <a class="system-primary-link" :href="galleryItem.link" target="_blank">
               <q-icon name="mdi-link-variant"/>
-              {{ galleryItem.name }}
+              {{ t(galleryItem.name) }}
               <q-icon name="mdi-open-in-new"/>
             </a>
           </div>
-          <span v-else>{{ galleryItem.name }}</span>
+          <span v-else>{{ t(galleryItem.name) }}</span>
         </div>
         <hr class="q-mb-md full-width section-hr"/>
       </div>
+    </div>
+    <div class="row full-width justify-center text-subtitle1 q-pb-lg">
+      <div class="full-width text-center">
+        <q-btn
+          icon="mdi-google-drive"
+          class="q-pa-sm relative-position system-primary-hover q-mb-xs custom-rounded-borders"
+          size="lg"
+          flat
+          aria-label="Google drive icon"
+          glossy
+          href="https://drive.google.com/drive/folders/1aIF8Tk2fmADzgg3k4h8_iPKdtHtAGAEL?usp=sharing"
+          target="_blank"/>
+      </div>
+      <a class="system-primary-link"
+         href="https://drive.google.com/drive/folders/1aIF8Tk2fmADzgg3k4h8_iPKdtHtAGAEL?usp=sharing"
+         target="_blank">
+        {{ t('viewAllOnGoogleDrive') }}
+        <q-icon name="mdi-open-in-new"/>
+      </a>
+    </div>
+    <div class="q-mb-lg">
+      <hr class="q-mb-md full-width section-hr"/>
+      <span class="text-body2">* {{ t("projectsAccessNotice") }}</span>
     </div>
   </div>
 </template>
@@ -80,7 +92,7 @@ export default defineComponent({
     const utilStore = useUtilStore();
     const imageGalleryItems = ref([
       {
-        name: 'Staking and NFT landing web3 website',
+        name: 'stakingAndNFTLandingWeb3Website',
         images: [
           'images/works/0 Staking and NFT landing sample/0.webp',
           'images/works/0 Staking and NFT landing sample/1.webp',
@@ -94,7 +106,7 @@ export default defineComponent({
         link: 'https://ascendants-sample.web.app/',
       },
       {
-        name: 'Saman Salamat Pajoh labeling system',
+        name: 'sspLabelingSystem',
         images: [
           'images/works/1 SSP labels/0.webp',
           'images/works/1 SSP labels/1.webp',
@@ -107,7 +119,7 @@ export default defineComponent({
         link: '',
       },
       {
-        name: 'ADR reporter system of Iran Food and Drug Administration(IRFDA)',
+        name: 'ADRReporterSystemOfIRFDA',
         images: [
           'images/works/4 Iran Food and Drug Administration(IRFDA)ADR reporter system/0.webp',
           'images/works/4 Iran Food and Drug Administration(IRFDA)ADR reporter system/1.webp',
@@ -124,7 +136,7 @@ export default defineComponent({
         link: 'https://adr-reporter.ttac.ir/',
       },
       {
-        name: 'Supply chain management system of Iran Food and Drug Administration(IRFDA)',
+        name: 'supplyChainManagementSystemOfIRFDA',
         images: [
           'images/works/5 Supply chain management (drag store subsystem)/0.webp',
           'images/works/5 Supply chain management (drag store subsystem)/1.webp',
@@ -140,7 +152,7 @@ export default defineComponent({
         link: 'https://statisticsreports.ttac.ir/',
       },
       {
-        name: 'Registration system of the Eghtesaad-e Bidaar brokerage',
+        name: 'registrationSystemOfEBBBrokerage',
         images: [
           'images/works/2 Eghtesaad Bidaar brokerage registration system/0.webp',
           'images/works/2 Eghtesaad Bidaar brokerage registration system/1.webp',
@@ -154,7 +166,7 @@ export default defineComponent({
         link: '',
       },
       {
-        name: 'Sabad gardan landing page of the Eghtesaad-e Bidaar brokerage',
+        name: 'sabadGardanOfEBBBrokerage',
         images: [
           'images/works/3 Sabad gardan landing page for Eghtesaad-e Bidaar brokerage/0.webp',
           'images/works/3 Sabad gardan landing page for Eghtesaad-e Bidaar brokerage/1.webp',
@@ -164,7 +176,7 @@ export default defineComponent({
         link: '',
       },
       {
-        name: 'Web3js minting sample',
+        name: 'Web3jsMintingSample',
         images: [
           'images/works/6 Web3js minting sample/0.webp',
           'images/works/6 Web3js minting sample/1.webp',
@@ -177,7 +189,7 @@ export default defineComponent({
         link: 'https://web3-sample-test.web.app/',
       },
       {
-        name: 'Chat app Vue Firebase sample',
+        name: 'chatAppVueFirebaseSample',
         images: [
           'images/works/7 Chat app/0.webp',
           'images/works/7 Chat app/1.webp',
@@ -191,7 +203,7 @@ export default defineComponent({
         link: 'https://firibz-chat.web.app/',
       },
       {
-        name: 'Others',
+        name: 'others',
         images: [
           'images/works/8 Others/0.webp',
           'images/works/8 Others/1.webp',

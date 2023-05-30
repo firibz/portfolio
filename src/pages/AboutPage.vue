@@ -4,7 +4,7 @@
           <span class="text-system-primary section-title text-bold">{{ t("about") }}</span> {{ t("me") }}
         </div>
         <hr class="full-width q-mt-md q-mb-lg block title-hr"/>
-        <div class="q-mb-xl">
+        <div class="q-mb-xl text-body1">
           <span class="text-bold q-mr-xs">{{ t("greeting") }}</span>
           <span>{{ t("aboutMeSection1") }}</span>
           <br/>

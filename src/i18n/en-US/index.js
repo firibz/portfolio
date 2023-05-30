@@ -26,4 +26,15 @@ export default {
   otherInterests: 'Also, I enjoy listening to music and playing video games',
   seeMyWorks: 'You can check out my work samples to get a better idea of what I do',
   experienceYears: 'years experience',
+  viewAllOnGoogleDrive: 'View all on Google drive',
+  stakingAndNFTLandingWeb3Website: 'Staking and NFT landing web3 website',
+  sspLabelingSystem: 'Saman Salamat Pajoh labeling system',
+  ADRReporterSystemOfIRFDA: 'ADR reporter system of Iran Food and Drug Administration(IRFDA)',
+  supplyChainManagementSystemOfIRFDA: 'Supply chain management system of Iran Food and Drug Administration(IRFDA)',
+  registrationSystemOfEBBBrokerage: 'Registration system of the Eghtesaad-e Bidaar brokerage',
+  sabadGardanOfEBBBrokerage: 'Sabad gardan landing page of the Eghtesaad-e Bidaar brokerage',
+  Web3jsMintingSample: 'Web3js minting sample',
+  chatAppVueFirebaseSample: 'Chat app Vue Firebase sample',
+  others: 'Others',
+  projectsAccessNotice: 'Most of my work either requires authentication and authorized access or is in the form of periodic projects and campaigns, therefore it is not possible for you to work with them, however, I tried to provide images or demos of some.'
 }

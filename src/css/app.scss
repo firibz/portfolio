@@ -179,7 +179,7 @@ html[dir="ltr"] body {
   background-size: 100% 100%;
 }
 .work-gallery.fullscreen .q-carousel__slide {
-  background-size: 100% auto !important;
+  background-size: contain !important;
 }
 
 .system-primary-link, .system-primary-hover{

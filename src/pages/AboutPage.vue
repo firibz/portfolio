@@ -13,6 +13,10 @@
           <span>{{ t("aboutMeSection4") }}</span>
           <br>
           <span>{{ t("aboutMeSection5") }}</span>
+          <br>
+          <br>
+          <span>{{ t("aboutMeSection6") }}</span>
+          <q-icon name="mdi-emoticon-excited-outline" size="sm"/>
         </div>
         <div v-if="utilState.language === 'fa-IR'" class="relative-position text-h5 text-bold">
           <span class="text-system-primary section-title text-bold">{{ t("interests") }}</span> {{ t("my") }}

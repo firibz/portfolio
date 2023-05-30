@@ -18,6 +18,7 @@ export default {
   aboutMeSection3: 'I trained people interested in front-end development and interviewed candidates for the front-end developer and test engineer positions.',
   aboutMeSection4: 'I also have experience working as a manual and automation test engineer.',
   aboutMeSection5: 'I have experience working independently as well as part of a team, and I am comfortable collaborating with other team members and stakeholders to ensure that projects are completed on time and to a high standard.',
+  aboutMeSection6: 'I enjoy making things full of tiny details that not everyone can see.',
   interests: 'Interests',
   bestBook: 'The best Book: ',
   bestMovie: 'The best Movie: ',

@@ -1,10 +1,7 @@
 <template>
   <div class="column col-xs-12 justify-start">
-    <div v-if="utilState.language === 'fa-IR'" class="relative-position text-h5 text-bold">
-      <span class="text-system-primary section-title text-bold">{{ t("sample") }}</span> {{ t("myWorks") }} *
-    </div>
-    <div v-else class="relative-position text-h5 text-bold">
-      <span class="text-system-primary section-title text-bold">{{ t("my") }}</span> {{ t("works") }} *
+    <div class="relative-position text-h5 text-bold">
+      <span class="text-system-primary section-title text-bold">{{ t("some") }}</span> {{ t("ofMyWorks") }} *
     </div>
     <hr class="full-width q-mt-md q-mb-lg block title-hr"/>
     <div class="row full-width">
@@ -83,14 +80,14 @@
 
 import {defineComponent, ref} from 'vue'
 import {useI18n} from "vue-i18n";
-import {useUtilStore} from "stores/util-store";
+// import {useUtilStore} from "stores/util-store";
 import {usePageScrollToTop} from "src/composables/page-scroll-to-top";
 
 export default defineComponent({
   name: 'WorksPage',
   setup() {
     const {t} = useI18n({useScope: "global"});
-    const utilStore = useUtilStore();
+    // const utilStore = useUtilStore();
     const imageGalleryItems = ref([
       {
         name: 'stakingAndNFTLandingWeb3Website',
@@ -220,7 +217,7 @@ export default defineComponent({
     usePageScrollToTop();
     return {
       t,
-      utilState: utilStore.$state,
+      // utilState: utilStore.$state,
       imageGalleryItems,
     }
   }

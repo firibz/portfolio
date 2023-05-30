@@ -90,7 +90,12 @@
                   </q-btn>
                 </div>
                 <hr class="q-mt-lg full-width section-hr"/>
-                <q-btn :label="t('downloadResume')" class="full-width download-btn" flat icon="mdi-cloud-download"/>
+                <q-btn :label="t('downloadResume')"
+                       class="full-width download-btn"
+                       flat
+                       icon="mdi-cloud-download"
+                       href="Fariborz Korevli front-end 05-2023.pdf"
+                       download/>
                 <hr v-if="$q.screen.lt.md" class="q-mb-md full-width section-hr"/>
               </div>
               <div class="column col-xs-11 col-md-6 full-height page-section relative-position overflow-hidden q-py-md">

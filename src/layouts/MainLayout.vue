@@ -100,6 +100,7 @@
               </div>
               <div class="column col-xs-11 col-md-6 full-height page-section relative-position overflow-hidden q-py-md">
                 <div
+                  id="top-of-page"
                   :class="$q.screen.lt.md ? 'custom-rounded-borders q-pa-lg' : 'card custom-rounded-borders-right q-px-xl q-py-lg'"
                   class="row full-width card section-container full-height overflow-auto"
                   style="display: flex">

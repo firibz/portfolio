@@ -84,6 +84,7 @@
 import {defineComponent, ref} from 'vue'
 import {useI18n} from "vue-i18n";
 import {useUtilStore} from "stores/util-store";
+import {usePageScrollToTop} from "src/composables/page-scroll-to-top";
 
 export default defineComponent({
   name: 'WorksPage',
@@ -216,7 +217,7 @@ export default defineComponent({
         link: '',
       },
     ])
-
+    usePageScrollToTop();
     return {
       t,
       utilState: utilStore.$state,

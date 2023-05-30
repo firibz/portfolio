@@ -72,8 +72,8 @@
                   />
                 </div>
                 <span class="text-h4 q-mt-sm">{{ t("fullName") }}</span>
-                <span class="text-caption text-system-primary  q-mt-sm">+{{ experienceYears }} {{t("experienceYears")}}</span>
-                <span class="text-h6 text-system-primary" style="letter-spacing: 1px">{{ t("job") }}</span>
+                <span class="text-caption text-system-primary q-mt-sm">+{{ experienceYears }} {{t("experienceYears")}}</span>
+                <span class="text-h6 text-system-primary">{{ t("job") }}</span>
                 <div class="text-center q-mt-sm">
                   <q-btn v-for="socialItem in SocialMediaItems" :key="socialItem.name"
                          :href="socialItem.link"
@@ -83,7 +83,11 @@
                          dense
                          flat
                          glossy
-                         target="_blank"/>
+                         :target="socialItem.target">
+                    <q-tooltip v-if="socialItem.hover" class="bg-system-primary text-section text-body2 ltr" :offset="[10, 10]">
+                      {{ socialItem.hover }}
+                    </q-tooltip>
+                  </q-btn>
                 </div>
                 <hr class="q-mt-lg full-width section-hr"/>
                 <q-btn :label="t('downloadResume')" class="full-width download-btn" flat icon="mdi-cloud-download"/>
@@ -133,29 +137,48 @@ import MenuItem from 'components/MenuItem.vue'
 
 const SocialMediaItems = [
   {
+    name: 'email',
+    link: 'mailto:fariborzkorevli@gmail.com',
+    icon: 'mdi-gmail',
+    target: '_self',
+    hover: 'fariborzkorevli@gmail.com',
+  },
+  {
+    name: 'phone',
+    link: 'tel:+989226206718',
+    icon: 'mdi-phone',
+    target: '_self',
+    hover: '+989226206718',
+  },
+  {
     name: 'Linkedin',
     link: 'https://www.linkedin.com/in/firibz',
     icon: 'mdi-linkedin',
+    target: '_blank',
   },
   {
     name: 'Telegram',
     link: 'https://t.me/Firibz',
     icon: 'mdi-telegram',
+    target: '_blank',
   },
   {
     name: 'Skype',
     link: 'https://join.skype.com/invite/y2tGW8Op16dm',
     icon: 'mdi-skype',
+    target: '_blank',
   },
   {
     name: 'StackOverflow',
     link: 'https://stackoverflow.com/users/8755786/fariborz-korevli',
     icon: 'mdi-stack-overflow',
+    target: '_blank',
   },
   {
     name: 'Github',
     link: 'https://github.com/firibz',
     icon: 'mdi-github',
+    target: '_blank',
   },
 ]
 export default defineComponent({

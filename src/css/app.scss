@@ -197,3 +197,9 @@ html[dir="ltr"] body {
 .work-gallery .q-carousel__thumbnail--active{
   border: 1px solid var(--q-color-lemon-green);
 }
+html[dir="rtl"] .ltr{
+  direction: rtl !important;
+}
+html[dir="ltr"] .ltr{
+  direction: ltr !important;
+}

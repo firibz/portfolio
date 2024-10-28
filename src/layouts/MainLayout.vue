@@ -94,7 +94,7 @@
                        class="full-width download-btn"
                        flat
                        icon="mdi-cloud-download"
-                       href="Fariborz Korevli front-end 05-2023.pdf"
+                       href="fariborz_korevli_frontend_11_2024.pdf"
                        download/>
                 <hr v-if="$q.screen.lt.md" class="q-mb-md full-width section-hr"/>
               </div>

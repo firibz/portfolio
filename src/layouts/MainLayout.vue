@@ -206,12 +206,12 @@ const SocialMediaItems = [
     icon: "mdi-telegram",
     target: "_blank",
   },
-  {
-    name: "Skype",
-    link: "https://join.skype.com/invite/y2tGW8Op16dm",
-    icon: "mdi-skype",
-    target: "_blank",
-  },
+  // {
+  //   name: "Skype",
+  //   link: "https://join.skype.com/invite/y2tGW8Op16dm",
+  //   icon: "mdi-skype",
+  //   target: "_blank",
+  // },
   {
     name: "StackOverflow",
     link: "https://stackoverflow.com/users/8755786/fariborz-korevli",

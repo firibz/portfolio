@@ -15,9 +15,9 @@ export default {
   downloadResume: "Download resume",
   greeting: "Hello! I’m Fariborz Korevli.",
   aboutMeSection1:
-    "I'm a full-stack developer with a strong focus on building high-quality web applications using Vue 2 and Vue 3, along with frameworks and libraries such as Quasar, Vuetify, Vuesax, BootstrapVue, ElementUI, VueX, Pinia, and Web3.js.",
+    "I'm a full-stack developer with a strong focus on building high-quality web applications with Vue.js (Vue 2 and Vue 3), along with frameworks and libraries such as Quasar, Vuetify, Vuesax, BootstrapVue, ElementUI, VueX, Pinia, and Web3.js.",
   aboutMeSection2:
-    "In my previous roles, I developed and maintained web applications using Vue 2, Vue 3, and web3.js in SPA, SSR, and PWA modes. More recently, I have also developed chatbot systems and production web widgets.",
+    "In my previous roles, I developed and maintained web applications across SPA, SSR, and PWA environments. More recently, I have also developed chatbot systems and production web widgets.",
   aboutMeSection3:
     "I have trained people interested in front-end development and interviewed candidates for front-end developer and test engineer positions.",
   aboutMeSection4:

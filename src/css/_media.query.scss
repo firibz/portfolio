@@ -39,7 +39,12 @@
 }
 
 @media only screen and (min-width: $breakpoint-md-min) {
-  .container{
+  html,
+  body {
+    overflow-y: hidden;
+    height: 100vh;
+  }
+  .container {
     height: calc(100vh - 10vh - 10vh);
     max-height: 950px;
     min-height: 650px;

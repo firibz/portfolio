@@ -1,17 +1,28 @@
-import { defineStore } from 'pinia';
+import { defineStore } from "pinia";
 
-export const useUtilStore = defineStore('util', {
+export const useUtilStore = defineStore("util", {
   state: () => ({
-    // counter: 0,
     appTheme: true,
     language: "en-US",
+    sceneMode: "orbital", // 'orbital' | 'matrix' | 'nebula'
+    activeSection: "about", // 'about' | 'works'
+    hoveredWorkIndex: -1,
+    selectedWorkImage: "images/works/0 Staking and NFT landing sample/0.webp",
+    selectedWorkTitle: "stakingAndNFTLandingWeb3Website",
+    pulseTrigger: 0,
   }),
-  getters: {
-    // doubleCount: (state) => state.counter * 2,
-  },
   actions: {
-    // increment() {
-    //   this.counter++;
-    // },
+    setSceneMode(mode) {
+      this.sceneMode = mode;
+      this.pulseTrigger = Date.now();
+    },
+    triggerPulse() {
+      this.pulseTrigger = Date.now();
+    },
+    setHoveredWork(index, image, title) {
+      this.hoveredWorkIndex = index;
+      if (image) this.selectedWorkImage = image;
+      if (title) this.selectedWorkTitle = title;
+    },
   },
 });

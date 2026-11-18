@@ -1,6 +1,3 @@
-// This is just an example,
-// so you can safely delete all default props below
-
 export default {
   fullName: "Fariborz Korevli",
   aboutMe: "About",
@@ -51,4 +48,29 @@ export default {
   others: "Others",
   projectsAccessNotice:
     "Most of my work either requires authentication and authorized access or is in the form of periodic projects and campaigns, therefore it is not possible for you to work with them, however, I tried to provide images or demos of some.",
+
+  // 3D Portfolio Additions
+  statusAvailable: "3D INTERACTIVE PORTFOLIO",
+  techConstellation: "3D Tech",
+  constellationSub: "Constellation",
+  babylonInteractiveHint:
+    "Drag to orbit the Babylon.js 3D core • Click any satellite node to inspect",
+  sceneModeOrbital: "Orbital Core",
+  sceneModeMatrix: "Cyber Wave",
+  sceneModeNebula: "Quantum Nebula",
+  pulseEnergy: "Shockwave",
+  liveDemo: "Live Demo",
+  slidesCount: "Screens",
+  catAll: "All Works",
+  catWeb3: "Web3 & NFT",
+  catGov: "Health & Gov",
+  catFintech: "FinTech",
+  catApps: "Web Apps",
+  holoStageTitle: "Babylon.js 3D Hologram Stage",
+  holoStageHint:
+    "Hover or select any project card below to project it into the 3D hologram monitor",
+  exploreWorksCta: "View my works",
+  coreArchitecture: "Full-Stack & 3D Architecture",
+  qaAndMentorship: "Engineering Leadership & QA",
+  backendAndAi: "Backend APIs & AI Workflows",
 };

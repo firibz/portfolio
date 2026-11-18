@@ -1,6 +1,3 @@
-// This is just an example,
-// so you can safely delete all default props below
-
 export default {
   fullName: "فریبرز کوراولی",
   aboutMe: "درباره‌ی من",
@@ -49,4 +46,29 @@ export default {
   others: "سایر",
   projectsAccessNotice:
     "بیشتر کارهای من یا احتیاج به احراز هویت و دسترسی مجاز دارند یا به صورت پروژه و کمپین های دوره ای بوده، به همین دلیل امکان کار کردن با آن ها برای شما وجود ندارد، با این وجود من سعی کردم تصاویر و یا در صورت امکان دموی آن ها را برای شما فراهم کنم.",
+
+  // 3D Portfolio Additions
+  statusAvailable: "پورتفولیوی تعاملی سه‌بعدی",
+  techConstellation: "منظومه سه‌بعدی",
+  constellationSub: "مهارت‌ها",
+  babylonInteractiveHint:
+    "برای چرخش هسته سه‌بعدی Babylon.js بکشید • روی هر نود کلیک کنید",
+  sceneModeOrbital: "مدار مرکزی",
+  sceneModeMatrix: "موج سایبری",
+  sceneModeNebula: "سحابی کوانتومی",
+  pulseEnergy: "موج انرژی",
+  liveDemo: "دموی آنلاین",
+  slidesCount: "تصویر",
+  catAll: "همه پروژه‌ها",
+  catWeb3: "وب۳ و بلاکچین",
+  catGov: "سلامت و سازمانی",
+  catFintech: "فین‌تک و بورس",
+  catApps: "وب اپلیکیشن",
+  holoStageTitle: "نمایشگر هولوگرام سه‌بعدی Babylon.js",
+  holoStageHint:
+    "روی هر پروژه هاور یا کلیک کنید تا در مانیتور سه‌بعدی نمایش داده شود",
+  exploreWorksCta: "مشاهده نمونه کارها",
+  coreArchitecture: "معماری فول‌استک و سه‌بعدی",
+  qaAndMentorship: "منتورشیپ و مهندسی تست",
+  backendAndAi: "بک‌اند Rails و هوش مصنوعی",
 };

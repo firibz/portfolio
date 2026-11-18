@@ -253,7 +253,9 @@
                 size="14px"
                 class="q-mr-xs"
               />
-              <span>{{ galleryItem.images.length }} {{ t("slidesCount") }}</span>
+              <span
+                >{{ galleryItem.images.length }} {{ t("slidesCount") }}</span
+              >
             </button>
           </div>
         </div>
@@ -289,7 +291,9 @@
               />
               <div class="work-grid-scrim"></div>
 
-              <div class="work-grid-top-badges row items-center justify-between">
+              <div
+                class="work-grid-top-badges row items-center justify-between"
+              >
                 <span class="project-index-badge">
                   {{ formatIndex(idx + 1) }}
                 </span>
@@ -340,8 +344,7 @@
                 type="button"
                 class="work-grid-mini-thumb relative-position overflow-hidden"
                 :class="{
-                  'work-grid-mini-thumb--active':
-                    galleryItem.slide === miniIdx,
+                  'work-grid-mini-thumb--active': galleryItem.slide === miniIdx,
                 }"
                 @click.stop="selectProjectSlide(galleryItem, miniIdx)"
               >
@@ -402,24 +405,24 @@
     <!-- 3. Redesigned Google Drive Archive Banner -->
     <div
       class="glass-3d-subcard drive-archive-card q-pa-md q-mt-xl q-mb-md relative-position overflow-hidden gsap-reveal"
-      @mousemove="onCardMouseMove($event, 4, 4)"
+      @mousemove="onCardMouseMove($event, 3, 2)"
       @mouseleave="onCardMouseLeave"
     >
       <div class="card-3d-glare"></div>
       <div class="drive-archive-inner relative-position z-top">
-        <div class="row items-center no-wrap" style="min-width: 0">
+        <div class="drive-archive-info row items-center no-wrap">
           <div class="drive-orb-badge flex flex-center q-mr-md shrink-0">
             <q-icon
               name="mdi-google-drive"
-              size="26px"
+              size="24px"
               class="text-system-primary"
             />
           </div>
-          <div class="column" style="min-width: 0">
-            <span class="text-subtitle1 text-bold">
+          <div class="column drive-archive-copy">
+            <span class="text-subtitle2 text-bold">
               {{ t("viewAllOnGoogleDrive") }}
             </span>
-            <span class="text-caption opacity-80 leading-relaxed">
+            <span class="text-caption opacity-80 drive-archive-sub">
               {{ t("archiveSubtitle") }}
             </span>
           </div>
@@ -432,7 +435,7 @@
           class="resume-3d-btn drive-cta-btn row items-center justify-center no-wrap q-px-md shrink-0"
         >
           <span class="resume-icon-circle flex flex-center q-mr-sm">
-            <q-icon name="mdi-folder-image" size="18px" />
+            <q-icon name="mdi-folder-image" size="17px" />
           </span>
           <span>Google Drive</span>
           <q-icon
@@ -447,7 +450,9 @@
     <!-- 4. Footnote Notice -->
     <div class="q-mb-md gsap-reveal">
       <hr class="q-mb-md full-width section-hr" />
-      <span class="text-body2 opacity-85">* {{ t("projectsAccessNotice") }}</span>
+      <span class="text-body2 opacity-85"
+        >* {{ t("projectsAccessNotice") }}</span
+      >
     </div>
 
     <!-- 5. Custom 3D Glassmorphic Fullscreen Lightbox -->
@@ -944,7 +949,7 @@ export default defineComponent({
   width: 100%;
   max-width: 100%;
   min-width: 0;
-  overflow-x: hidden;
+  overflow: visible;
   box-sizing: border-box;
 }
 
@@ -1691,36 +1696,72 @@ export default defineComponent({
   max-width: 100%;
   min-width: 0;
   box-sizing: border-box;
+  background: linear-gradient(
+    135deg,
+    rgba(82, 211, 121, 0.08) 0%,
+    rgba(24, 28, 25, 0.88) 55%,
+    rgba(30, 36, 32, 0.9) 100%
+  );
+}
+
+.body--light .drive-archive-card {
+  background: linear-gradient(
+    135deg,
+    rgba(76, 119, 83, 0.1) 0%,
+    rgba(248, 251, 249, 0.96) 55%,
+    rgba(238, 245, 240, 0.94) 100%
+  );
 }
 
 .drive-archive-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 14px;
-  flex-wrap: wrap;
+  gap: 16px;
+  flex-wrap: nowrap;
+}
+
+.drive-archive-info {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.drive-archive-copy {
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+.drive-archive-sub {
+  line-height: 1.45;
+  margin-top: 2px;
 }
 
 .drive-orb-badge {
-  width: 46px;
-  height: 46px;
-  border-radius: 14px;
-  background: rgba(164, 255, 145, 0.1);
-  border: 1px solid rgba(164, 255, 145, 0.26);
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(164, 255, 145, 0.12);
+  border: 1px solid rgba(164, 255, 145, 0.28);
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
 }
 
 .body--light .drive-orb-badge {
-  background: rgba(76, 119, 83, 0.1);
-  border-color: rgba(76, 119, 83, 0.26);
+  background: rgba(76, 119, 83, 0.12);
+  border-color: rgba(76, 119, 83, 0.28);
 }
 
 .drive-cta-btn {
   height: 42px;
-  min-width: 160px;
+  white-space: nowrap;
 }
 
 @media (max-width: 599px) {
+  .drive-archive-inner {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+  }
+
   .drive-cta-btn {
     width: 100%;
   }

@@ -124,10 +124,12 @@ html[dir="ltr"] body {
   perspective: 1400px;
 }
 
-.profile-3d-card,
-.glass-3d-subcard {
+.profile-3d-card {
   transform-style: preserve-3d;
-  will-change: transform;
+}
+
+.glass-3d-subcard {
+  isolation: isolate;
 }
 
 .depth-layer-2 {
@@ -528,6 +530,44 @@ html[dir="rtl"] .experience-3d-badge {
   &--firing {
     background: rgba(76, 119, 83, 0.25);
     color: #4c7753;
+  }
+}
+
+/* Mobile Scene Bar & Profile Card Spacing */
+.mobile-scene-bar {
+  border-top: 1px solid rgba(164, 255, 145, 0.12);
+  margin-top: 2px;
+}
+
+.body--light .mobile-scene-bar {
+  border-top-color: rgba(76, 119, 83, 0.16);
+}
+
+.shockwave-trigger-btn--mobile {
+  width: 34px;
+  height: 34px;
+}
+
+.mobile-profile-card {
+  overflow: hidden;
+
+  .profile-image-size {
+    height: 300px;
+    max-height: 320px;
+  }
+
+  .hero-name-3d {
+    font-size: 1.75rem;
+    line-height: 1.25;
+  }
+
+  .hero-tech-pill {
+    padding: 3px 10px;
+  }
+
+  .social-3d-btn {
+    margin-left: 5px;
+    margin-right: 5px;
   }
 }
 

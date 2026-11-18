@@ -1,7 +1,7 @@
 import gsap from "gsap";
 
 export function useGsap3D() {
-  const onCardMouseMove = (event, maxTilt = 9, liftZ = 6) => {
+  const onCardMouseMove = (event, maxTilt = 9) => {
     const el = event.currentTarget;
     if (!el) return;
     const rect = el.getBoundingClientRect();
@@ -23,7 +23,6 @@ export function useGsap3D() {
     gsap.to(el, {
       rotateX,
       rotateY,
-      z: liftZ,
       transformPerspective: 1100,
       duration: 0.35,
       ease: "power2.out",
@@ -38,11 +37,11 @@ export function useGsap3D() {
     gsap.to(el, {
       rotateX: 0,
       rotateY: 0,
-      z: 0,
       transformPerspective: 1100,
-      duration: 0.75,
-      ease: "elastic.out(1, 0.55)",
+      duration: 0.55,
+      ease: "power3.out",
       overwrite: "auto",
+      clearProps: "transform",
     });
   };
 
@@ -72,6 +71,7 @@ export function useGsap3D() {
       duration: 0.6,
       ease: "elastic.out(1, 0.45)",
       overwrite: "auto",
+      clearProps: "transform",
     });
   };
 
@@ -84,20 +84,17 @@ export function useGsap3D() {
       items,
       {
         opacity: 0,
-        y: 32,
-        rotateX: -12,
-        scale: 0.96,
-        transformPerspective: 1000,
+        y: 22,
+        scale: 0.985,
       },
       {
         opacity: 1,
         y: 0,
-        rotateX: 0,
         scale: 1,
-        duration: 0.72,
-        stagger: 0.08,
+        duration: 0.55,
+        stagger: 0.055,
         ease: "power3.out",
-        clearProps: "transform",
+        clearProps: "transform,opacity",
       }
     );
   };

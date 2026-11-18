@@ -9,122 +9,205 @@
             <div class="row full-width justify-center container items-stretch">
               <!-- 1. Floating 3D Navigation & Scene Dock -->
               <div
-                :class="$q.screen.lt.md ? 'q-mb-sm' : 'q-pr-sm'"
-                class="column full-height col-xs-11 col-md-1 items-end justify-between"
+                :class="$q.screen.lt.md ? 'q-mb-md' : 'q-pr-sm full-height'"
+                class="column col-xs-11 col-md-1 items-end justify-between"
               >
                 <div
                   :class="
                     $q.screen.lt.md
-                      ? 'full-width row justify-between items-center card custom-rounded-borders q-py-xs q-px-sm'
+                      ? 'full-width column card custom-rounded-borders q-py-xs q-px-sm mobile-nav-dock'
                       : 'column items-center justify-between full-height card menu-borders q-py-md q-px-xs'
                   "
                   style="display: flex"
                 >
-                  <!-- Language Switcher -->
-                  <q-btn-toggle
-                    v-model="utilState.language"
-                    :class="$q.screen.lt.md ? 'q-mr-xs' : 'q-mb-sm'"
-                    :flat="$q.dark.isActive"
-                    :options="[
-                      { label: 'En', value: 'en-US' },
-                      { label: 'Fa', value: 'fa-IR' },
-                    ]"
-                    class="text-bold lang-toggle-3d"
-                    color="section"
-                    dense
-                    glossy
-                    no-caps
-                    padding="4px 11px"
-                    rounded
-                    style="height: 32px"
-                    text-color="system-text"
-                    toggle-color="green-11"
-                    toggle-text-color="system-primary"
-                    @update:model-value="changeLanguage"
-                  />
-
-                  <!-- Route Navigation Items (Well-spaced on desktop) -->
-                  <q-list
-                    :class="
-                      $q.screen.lt.md ? 'row no-wrap' : 'full-width q-my-xs'
-                    "
-                  >
-                    <menu-item
-                      v-for="item in menuList"
-                      :key="item.title"
-                      :icon="item.icon"
-                      :link="item.link"
-                      :title="item.title"
+                  <!-- Desktop Vertical Layout -->
+                  <template v-if="!$q.screen.lt.md">
+                    <!-- Language Switcher -->
+                    <q-btn-toggle
+                      v-model="utilState.language"
+                      class="q-mb-sm text-bold lang-toggle-3d"
+                      :flat="$q.dark.isActive"
+                      :options="[
+                        { label: 'En', value: 'en-US' },
+                        { label: 'Fa', value: 'fa-IR' },
+                      ]"
+                      color="section"
+                      dense
+                      glossy
+                      no-caps
+                      padding="4px 11px"
+                      rounded
+                      style="height: 32px"
+                      text-color="system-text"
+                      toggle-color="green-11"
+                      toggle-text-color="system-primary"
+                      @update:model-value="changeLanguage"
                     />
-                  </q-list>
 
-                  <!-- 3D Camera Mode Segmented Switch + Distinct Pulse Action Button -->
-                  <div
-                    v-if="!$q.screen.lt.md"
-                    class="column items-center q-my-xs"
-                  >
-                    <!-- 3-Way Camera Mode Capsule -->
-                    <div
-                      class="scene-mode-capsule column items-center q-gutter-y-xs q-pa-xs"
-                    >
-                      <q-btn
-                        v-for="mode in sceneModes"
-                        :key="mode.id"
-                        dense
-                        flat
-                        round
-                        size="sm"
-                        :icon="mode.icon"
-                        :aria-label="mode.label"
-                        :class="
-                          utilState.sceneMode === mode.id
-                            ? 'text-system-primary scene-btn--active'
-                            : 'opacity-70 system-primary-hover'
-                        "
-                        @click="setSceneMode(mode.id)"
+                    <!-- Route Navigation Items (Well-spaced on desktop) -->
+                    <q-list class="full-width q-my-xs">
+                      <menu-item
+                        v-for="item in menuList"
+                        :key="item.title"
+                        :icon="item.icon"
+                        :link="item.link"
+                        :title="item.title"
+                      />
+                    </q-list>
+
+                    <!-- 3D Camera Mode Segmented Switch + Distinct Pulse Action Button -->
+                    <div class="column items-center q-my-xs">
+                      <!-- 3-Way Camera Mode Capsule -->
+                      <div
+                        class="scene-mode-capsule column items-center q-gutter-y-xs q-pa-xs"
                       >
+                        <q-btn
+                          v-for="mode in sceneModes"
+                          :key="mode.id"
+                          dense
+                          flat
+                          round
+                          size="sm"
+                          :icon="mode.icon"
+                          :aria-label="mode.label"
+                          :class="
+                            utilState.sceneMode === mode.id
+                              ? 'text-system-primary scene-btn--active'
+                              : 'opacity-70 system-primary-hover'
+                          "
+                          @click="setSceneMode(mode.id)"
+                        >
+                          <q-tooltip
+                            class="bg-system-primary text-section text-caption"
+                            anchor="center left"
+                            self="center right"
+                          >
+                            3D Mode: {{ mode.label }}
+                          </q-tooltip>
+                        </q-btn>
+                      </div>
+
+                      <!-- Distinct Tactile Wave Action Trigger Button -->
+                      <button
+                        type="button"
+                        class="shockwave-trigger-btn q-mt-sm"
+                        :class="{ 'shockwave-trigger-btn--firing': isPulsing }"
+                        aria-label="Trigger energy pulse"
+                        @click="handlePulseClick"
+                      >
+                        <span class="shockwave-ring"></span>
+                        <q-icon name="mdi-access-point" size="18px" />
                         <q-tooltip
                           class="bg-system-primary text-section text-caption"
                           anchor="center left"
                           self="center right"
                         >
-                          3D Mode: {{ mode.label }}
+                          Trigger {{ t("pulseEnergy") }}
                         </q-tooltip>
-                      </q-btn>
+                      </button>
                     </div>
 
-                    <!-- Distinct Tactile Wave Action Trigger Button -->
-                    <button
-                      type="button"
-                      class="shockwave-trigger-btn q-mt-sm"
-                      :class="{ 'shockwave-trigger-btn--firing': isPulsing }"
-                      aria-label="Trigger energy pulse"
-                      @click="handlePulseClick"
-                    >
-                      <span class="shockwave-ring"></span>
-                      <q-icon name="mdi-access-point" size="18px" />
-                      <q-tooltip
-                        class="bg-system-primary text-section text-caption"
-                        anchor="center left"
-                        self="center right"
-                      >
-                        Trigger {{ t("pulseEnergy") }}
-                      </q-tooltip>
-                    </button>
-                  </div>
+                    <!-- Dark / Light Theme Switcher -->
+                    <q-toggle
+                      v-model="utilState.appTheme"
+                      class="q-mt-xs text-blue"
+                      :color="utilState.appTheme ? 'amber' : 'indigo-11'"
+                      aria-label="switch-theme-btn"
+                      checked-icon="mdi-brightness-7"
+                      keep-color
+                      unchecked-icon="mdi-weather-night"
+                      @update:model-value="toggleTheme"
+                    />
+                  </template>
 
-                  <!-- Dark / Light Theme Switcher -->
-                  <q-toggle
-                    v-model="utilState.appTheme"
-                    :class="$q.screen.lt.md ? 'q-ml-xs' : 'q-mt-xs'"
-                    :color="utilState.appTheme ? 'amber' : 'indigo-11'"
-                    aria-label="switch-theme-btn"
-                    checked-icon="mdi-brightness-7"
-                    class="text-blue"
-                    keep-color
-                    unchecked-icon="mdi-weather-night"
-                    @update:model-value="toggleTheme"
-                  />
+                  <!-- Mobile 2-Row Compact Dock (Shows Nav + Theme + Scene Modes + Pulse) -->
+                  <template v-else>
+                    <div
+                      class="full-width row justify-between items-center no-wrap q-py-xs"
+                    >
+                      <!-- Language Switcher -->
+                      <q-btn-toggle
+                        v-model="utilState.language"
+                        class="q-mr-xs text-bold lang-toggle-3d"
+                        :flat="$q.dark.isActive"
+                        :options="[
+                          { label: 'En', value: 'en-US' },
+                          { label: 'Fa', value: 'fa-IR' },
+                        ]"
+                        color="section"
+                        dense
+                        glossy
+                        no-caps
+                        padding="4px 10px"
+                        rounded
+                        style="height: 32px"
+                        text-color="system-text"
+                        toggle-color="green-11"
+                        toggle-text-color="system-primary"
+                        @update:model-value="changeLanguage"
+                      />
+
+                      <!-- Route Navigation Items -->
+                      <q-list class="row no-wrap">
+                        <menu-item
+                          v-for="item in menuList"
+                          :key="item.title"
+                          :icon="item.icon"
+                          :link="item.link"
+                          :title="item.title"
+                        />
+                      </q-list>
+
+                      <!-- Dark / Light Theme Switcher -->
+                      <q-toggle
+                        v-model="utilState.appTheme"
+                        class="q-ml-xs text-blue"
+                        :color="utilState.appTheme ? 'amber' : 'indigo-11'"
+                        aria-label="switch-theme-btn"
+                        checked-icon="mdi-brightness-7"
+                        keep-color
+                        unchecked-icon="mdi-weather-night"
+                        @update:model-value="toggleTheme"
+                      />
+                    </div>
+
+                    <!-- Mobile Background Pattern Controls & Energy Pulse Bar -->
+                    <div
+                      class="full-width row items-center justify-center q-gutter-x-sm mobile-scene-bar q-pt-xs q-pb-xs"
+                    >
+                      <div
+                        class="scene-mode-capsule row items-center no-wrap q-gutter-x-xs q-px-xs q-py-xs"
+                      >
+                        <q-btn
+                          v-for="mode in sceneModes"
+                          :key="'mob-' + mode.id"
+                          dense
+                          flat
+                          round
+                          size="sm"
+                          :icon="mode.icon"
+                          :aria-label="mode.label"
+                          :class="
+                            utilState.sceneMode === mode.id
+                              ? 'text-system-primary scene-btn--active'
+                              : 'opacity-70 system-primary-hover'
+                          "
+                          @click="setSceneMode(mode.id)"
+                        />
+                      </div>
+
+                      <button
+                        type="button"
+                        class="shockwave-trigger-btn shockwave-trigger-btn--mobile"
+                        :class="{ 'shockwave-trigger-btn--firing': isPulsing }"
+                        aria-label="Trigger energy pulse"
+                        @click="handlePulseClick"
+                      >
+                        <span class="shockwave-ring"></span>
+                        <q-icon name="mdi-access-point" size="16px" />
+                      </button>
+                    </div>
+                  </template>
                 </div>
               </div>
 
@@ -133,10 +216,10 @@
                 ref="profileCardRef"
                 :class="
                   $q.screen.lt.md
-                    ? 'order-first custom-rounded-borders-top q-mb-md'
-                    : 'card custom-rounded-borders'
+                    ? 'order-first custom-rounded-borders q-mb-md mobile-profile-card'
+                    : 'full-height card custom-rounded-borders'
                 "
-                class="column full-height col-xs-11 col-md-4 items-center justify-between card card-shadow-left"
+                class="column col-xs-11 col-md-4 items-center justify-between card card-shadow-left"
               >
                 <!-- Profile Picture with Original Dark Curve / Light V-Shape -->
                 <div class="relative-position profile-image-size full-width">
@@ -163,7 +246,10 @@
                 </div>
 
                 <!-- Identity & Role -->
-                <div class="column items-center text-center q-px-md z-top">
+                <div
+                  class="column items-center text-center q-px-md z-top"
+                  :class="$q.screen.lt.md ? 'q-pt-md q-pb-xs' : ''"
+                >
                   <span class="text-h4 text-bold hero-name-3d q-mt-xs">
                     {{ t("fullName") }}
                   </span>
@@ -174,7 +260,10 @@
                   </span>
 
                   <!-- 3D Tech Stack Micro Badges -->
-                  <div class="row justify-center q-gutter-xs q-mt-sm">
+                  <div
+                    class="row justify-center q-gutter-xs"
+                    :class="$q.screen.lt.md ? 'q-mt-md' : 'q-mt-sm'"
+                  >
                     <span
                       v-for="badge in heroTechBadges"
                       :key="badge"
@@ -186,7 +275,10 @@
                 </div>
 
                 <!-- Social Media Magnetic 3D Buttons -->
-                <div class="text-center q-mt-sm z-top">
+                <div
+                  class="text-center z-top"
+                  :class="$q.screen.lt.md ? 'q-my-md' : 'q-mt-sm'"
+                >
                   <q-btn
                     v-for="socialItem in SocialMediaItems"
                     :key="socialItem.name"
@@ -212,7 +304,10 @@
                 </div>
 
                 <!-- Redesigned 3D Download Resume CTA Button -->
-                <div class="full-width q-px-lg q-pb-md q-pt-xs z-top">
+                <div
+                  class="full-width q-px-lg q-pt-xs z-top"
+                  :class="$q.screen.lt.md ? 'q-pb-lg' : 'q-pb-md'"
+                >
                   <a
                     href="fariborz_korevli_03_2026.pdf"
                     download

@@ -45,7 +45,9 @@
 
                   <!-- Route Navigation Items (Well-spaced on desktop) -->
                   <q-list
-                    :class="$q.screen.lt.md ? 'row no-wrap' : 'full-width q-my-xs'"
+                    :class="
+                      $q.screen.lt.md ? 'row no-wrap' : 'full-width q-my-xs'
+                    "
                   >
                     <menu-item
                       v-for="item in menuList"
@@ -62,7 +64,9 @@
                     class="column items-center q-my-xs"
                   >
                     <!-- 3-Way Camera Mode Capsule -->
-                    <div class="scene-mode-capsule column items-center q-gutter-y-xs q-pa-xs">
+                    <div
+                      class="scene-mode-capsule column items-center q-gutter-y-xs q-pa-xs"
+                    >
                       <q-btn
                         v-for="mode in sceneModes"
                         :key="mode.id"
@@ -94,7 +98,7 @@
                       type="button"
                       class="shockwave-trigger-btn q-mt-sm"
                       :class="{ 'shockwave-trigger-btn--firing': isPulsing }"
-                      aria-label="Trigger WebGL wave pulse"
+                      aria-label="Trigger energy pulse"
                       @click="handlePulseClick"
                     >
                       <span class="shockwave-ring"></span>
@@ -275,7 +279,13 @@
 </template>
 
 <script>
-import { defineComponent, computed, ref, onMounted, onBeforeUnmount } from "vue";
+import {
+  defineComponent,
+  computed,
+  ref,
+  onMounted,
+  onBeforeUnmount,
+} from "vue";
 import { useI18n } from "vue-i18n";
 import { useLanguage } from "src/composables/language";
 import { useTheme } from "src/composables/theme";

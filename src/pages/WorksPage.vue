@@ -470,12 +470,12 @@
           <div
             class="works-lightbox-header row items-center justify-between q-px-lg q-py-md"
           >
-            <div class="row items-center no-wrap" style="min-width: 0">
+            <div class="works-lightbox-title row items-center no-wrap col">
               <span class="project-index-badge q-mr-sm shrink-0">
                 {{ formatIndex(lightbox.slide + 1) }} /
                 {{ formatIndex(lightbox.item.images.length) }}
               </span>
-              <span class="text-subtitle1 text-bold ellipsis">
+              <span class="works-lightbox-title-text text-subtitle1 text-bold">
                 {{ t(lightbox.item.name) }}
               </span>
             </div>
@@ -1776,6 +1776,8 @@ export default defineComponent({
   position: fixed;
   inset: 0;
   z-index: 9999;
+  overflow: hidden;
+  overscroll-behavior: none;
   background: rgba(10, 14, 11, 0.92);
   color: #fff;
   backdrop-filter: blur(18px);
@@ -1790,6 +1792,20 @@ export default defineComponent({
 .works-lightbox-header {
   border-bottom: 1px solid rgba(164, 255, 145, 0.14);
   background: rgba(18, 22, 19, 0.55);
+}
+
+.works-lightbox-title {
+  min-width: 0;
+}
+
+.works-lightbox-title-text {
+  flex: 1;
+  min-width: 0;
+  line-height: 1.35;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .body--light .works-lightbox-header {
@@ -1861,15 +1877,19 @@ export default defineComponent({
 }
 
 .works-lightbox-stage {
+  width: 100%;
+  min-width: 0;
   min-height: 0;
   overflow: hidden;
+  box-sizing: border-box;
   padding-top: 16px;
   padding-bottom: 16px;
 }
 
 .works-lightbox-img {
-  max-width: 90vw;
+  max-width: 100%;
   max-height: 70vh;
+  box-sizing: border-box;
   border-radius: 14px;
   object-fit: contain;
   border: 1px solid rgba(164, 255, 145, 0.22);
@@ -1928,6 +1948,9 @@ export default defineComponent({
 }
 
 .works-lightbox-footer {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
   border-top: 1px solid rgba(164, 255, 145, 0.14);
   background: rgba(18, 22, 19, 0.6);
 }
@@ -1938,9 +1961,13 @@ export default defineComponent({
 }
 
 .works-lightbox-strip {
-  max-width: 92vw;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
   gap: 10px;
   overflow-x: auto;
+  overscroll-behavior: contain;
   padding: 4px 2px;
 }
 
@@ -2024,7 +2051,7 @@ export default defineComponent({
     }
   }
   .works-lightbox-img {
-    max-width: 96vw;
+    max-width: 100%;
     max-height: 62vh;
   }
 }

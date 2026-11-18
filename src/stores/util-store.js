@@ -4,25 +4,29 @@ export const useUtilStore = defineStore("util", {
   state: () => ({
     appTheme: true,
     language: "en-US",
-    sceneMode: "orbital", // 'orbital' | 'matrix' | 'nebula'
-    activeSection: "about", // 'about' | 'works'
-    hoveredWorkIndex: -1,
-    selectedWorkImage: "images/works/0 Staking and NFT landing sample/0.webp",
-    selectedWorkTitle: "stakingAndNFTLandingWeb3Website",
+    chapterProgress: 0,
+    activeChapter: 0,
+    highlightSculpture: false,
     pulseTrigger: 0,
+    jumpTarget: -1,
   }),
   actions: {
-    setSceneMode(mode) {
-      this.sceneMode = mode;
+    setChapterProgress(val) {
+      this.chapterProgress = val;
+      this.activeChapter = Math.min(4, Math.max(0, Math.round(val)));
+    },
+    requestChapterJump(index) {
+      this.jumpTarget = index;
       this.pulseTrigger = Date.now();
+    },
+    clearChapterJump() {
+      this.jumpTarget = -1;
     },
     triggerPulse() {
       this.pulseTrigger = Date.now();
     },
-    setHoveredWork(index, image, title) {
-      this.hoveredWorkIndex = index;
-      if (image) this.selectedWorkImage = image;
-      if (title) this.selectedWorkTitle = title;
+    setHighlight(on) {
+      this.highlightSculpture = Boolean(on);
     },
   },
 });

@@ -13,7 +13,8 @@
     "build": "quasar build"
   },
   "dependencies": {
-    "@babylonjs/core": "^9.37.0",
+    "@fontsource-variable/space-grotesk": "^5.3.0",
+    "@fontsource/instrument-serif": "^5.3.0",
     "@quasar/extras": "^1.0.0",
     "axios": "^1.2.1",
     "gsap": "^3.15.1",

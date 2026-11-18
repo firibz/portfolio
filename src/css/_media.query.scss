@@ -1,87 +1,9 @@
-//max queries
-@media only screen and (max-width: $breakpoint-lg-max) {
-  .work-gallery {
-    height: 20rem;
-    //height: calc(20rem + 85px);
-    //padding-bottom: 85px;
-  }
-}
-
-@media only screen and (max-width: $breakpoint-md-max) {
-}
-
+// Responsive media helpers for the 3D Sculpture Journey
 @media only screen and (max-width: $breakpoint-sm-max) {
-  .container{
-    padding-top: 3vh;
-    padding-bottom: 3vh;
-  }
-  .work-gallery {
-    height: 18rem;
-    //height: calc(18rem + 85px);
-    //padding-bottom: 85px;
+  .journey-chapter {
+    padding-top: 96px;
+    padding-bottom: 96px;
+    padding-left: 16px;
+    padding-right: 16px;
   }
 }
-
-@media only screen and (max-width: $breakpoint-xs-max) {
-  .work-gallery {
-    height: 15rem;
-    //height: calc(15rem + 85px);
-    //padding-bottom: 85px;
-  }
-}
-
-//-----------------------------------------------------------
-//min queries
-@media only screen and (min-width: $breakpoint-xl-min) {
-}
-
-@media only screen and (min-width: $breakpoint-lg-min) {
-}
-
-@media only screen and (min-width: $breakpoint-md-min) {
-  html,
-  body {
-    overflow-y: hidden;
-    height: 100vh;
-  }
-  .container {
-    height: calc(100vh - 10vh - 10vh);
-    max-height: 950px;
-    min-height: 650px;
-    margin-top: 5vh;
-    margin-bottom: 5vh;
-  }
-}
-
-@media only screen and (min-width: $breakpoint-sm-min) {
-
-}
-
-//@supports (-webkit-overflow-scrolling: touch) {
-//  .tableWithBarSize {
-//    -webkit-overflow-scrolling: touch;
-//  }
-//
-//  .tableWithoutBarSize {
-//    -webkit-overflow-scrolling: touch;
-//  }
-//
-//  input[type="color"],
-//  input[type="date"],
-//  input[type="datetime"],
-//  input[type="datetime-local"],
-//  input[type="email"],
-//  input[type="month"],
-//  input[type="number"],
-//  input[type="password"],
-//  input[type="search"],
-//  input[type="tel"],
-//  input[type="text"],
-//  input[type="time"],
-//  input[type="url"],
-//  input[type="week"],
-//  select:focus,
-//  textarea {
-//    font-size: 16px;
-//  }
-//}

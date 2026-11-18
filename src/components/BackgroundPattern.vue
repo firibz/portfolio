@@ -30,11 +30,7 @@
         </div>
 
         <!-- PATTERN 3: QUANTUM NEBULA (Drifting Cosmic Clouds & Breathing Halos) -->
-        <div
-          v-else
-          key="nebula"
-          class="pattern-layer pattern-nebula"
-        >
+        <div v-else key="nebula" class="pattern-layer pattern-nebula">
           <span v-for="n in 14" :key="`neb-${n}`"></span>
         </div>
       </Transition>
@@ -67,7 +63,7 @@ export default defineComponent({
     const utilStore = useUtilStore();
 
     const isDark = computed(() => $q.dark.isActive);
-    const activeMode = computed(() => utilStore.sceneMode || "orbital");
+    const activeMode = computed(() => utilStore.sceneMode || "matrix");
     const parallaxStageRef = ref(null);
     const pulseKey = ref(0);
 
@@ -173,12 +169,7 @@ export default defineComponent({
 }
 
 .theme--light {
-  --bg-canvas: linear-gradient(
-    135deg,
-    #edf3ef 0%,
-    #dfe9e2 50%,
-    #e9f1ec 100%
-  );
+  --bg-canvas: linear-gradient(135deg, #edf3ef 0%, #dfe9e2 50%, #e9f1ec 100%);
   --color-green-solid: rgba(56, 168, 88, 0.42);
   --color-dark-solid: rgba(112, 142, 124, 0.26);
   --color-yellow-solid: rgba(232, 184, 24, 0.44);

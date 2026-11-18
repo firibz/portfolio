@@ -4,7 +4,7 @@ export const useUtilStore = defineStore("util", {
   state: () => ({
     appTheme: true,
     language: "en-US",
-    sceneMode: "orbital", // 'orbital' | 'matrix' | 'nebula'
+    sceneMode: "matrix", // 'orbital' | 'matrix' | 'nebula'
     activeSection: "about", // 'about' | 'works'
     hoveredWorkIndex: -1,
     selectedWorkImage: "images/works/0 Staking and NFT landing sample/0.webp",

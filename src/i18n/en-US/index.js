@@ -73,4 +73,17 @@ export default {
   coreArchitecture: "Full-Stack & 3D Architecture",
   qaAndMentorship: "Engineering Leadership & QA",
   backendAndAi: "Backend APIs & AI Workflows",
+  viewShowcase: "Showcase View",
+  viewGrid: "Grid View",
+  on3DStage: "3D Active",
+  openLightbox: "Inspect Screens",
+  projectCount: "Projects",
+  archiveSubtitle:
+    "Explore full high-resolution screenshots and additional project captures",
+  viewShowcase: "Showcase View",
+  viewGrid: "Grid View",
+  on3DStage: "3D Active",
+  openLightbox: "Inspect Screens",
+  projectCount: "Projects",
+  archiveSubtitle: "Explore full high-resolution screenshots and additional project captures",
 };

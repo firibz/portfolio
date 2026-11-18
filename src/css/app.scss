@@ -61,6 +61,11 @@ html[dir="ltr"] body {
   border-radius: 8px;
 }
 
+.section-container {
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+}
+
 .image-cover-top {
   object-fit: cover;
   object-position: 50% 5% !important;

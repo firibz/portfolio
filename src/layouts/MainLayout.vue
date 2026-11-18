@@ -241,10 +241,12 @@
                   id="top-of-page"
                   :class="
                     $q.screen.lt.md
-                      ? 'custom-rounded-borders q-pa-lg'
-                      : 'card custom-rounded-borders-right q-px-xl q-py-lg'
+                      ? 'custom-rounded-borders q-pa-md'
+                      : $q.screen.gt.md
+                      ? 'card custom-rounded-borders-right q-px-xl q-py-lg'
+                      : 'card custom-rounded-borders-right q-px-lg q-py-lg'
                   "
-                  class="row full-width card section-container full-height overflow-auto"
+                  class="row full-width card section-container full-height"
                   style="display: flex"
                 >
                   <router-view v-slot="{ Component }">

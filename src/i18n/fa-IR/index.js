@@ -71,4 +71,10 @@ export default {
   coreArchitecture: "معماری فول‌استک و سه‌بعدی",
   qaAndMentorship: "منتورشیپ و مهندسی تست",
   backendAndAi: "بک‌اند Rails و هوش مصنوعی",
+  viewShowcase: "نمایش گالری",
+  viewGrid: "نمایش شبکه‌ای",
+  on3DStage: "نمایش سه‌بعدی",
+  openLightbox: "مشاهده تمام تصاویر",
+  projectCount: "پروژه",
+  archiveSubtitle: "مشاهده تصاویر باکیفیت کامل و نمونه کارهای بیشتر در آرشیو",
 };
